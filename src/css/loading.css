@@ -1,0 +1,118 @@
+.loading-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfe4dc;
+  overflow: hidden;
+}
+
+.logo-boxs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 3rem;
+}
+
+.loading-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transform: translateY(4px);
+  /* 向上提一點點做視覺平衡 */
+}
+
+.logo {
+  width: 56px;
+  object-fit: contain;
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+}
+
+.company-name p {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 80px;
+  color: #434842;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-lines {
+  position: relative;
+}
+
+.loading-lines-flex {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  align-items: center;
+  width: 158px;
+  height: 150px;
+}
+
+.loading-line {
+  opacity: 0;
+  width: 15px;
+  height: 60%;
+  background-color: #395970;
+  border-radius: 10px;
+  transform: translateY(-50%) scaleY(0.3);
+}
+
+.loading-line.ready {
+  opacity: 1;
+}
+
+.animate-dot-animation {
+  animation: dot-animation 1s ease-in-out infinite;
+}
+
+@keyframes dot-animation {
+
+  0%,
+  100% {
+    transform: translateY(-50%) scaleY(0.3);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-50%) scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* 組件整體進場 */
+
+.fade-blur-leave-active {
+  animation: fade-blur-out 0.5s ease-in forwards;
+}
+
+/* 離場動畫：logo 飄往右上 + 淡出 */
+@keyframes fade-blur-out {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: scale(0.95);
+  }
+}

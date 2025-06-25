@@ -1,0 +1,154 @@
+.secContent {
+    background-color: #f2f8f2;
+}
+
+
+
+/* 卡片區 */
+
+
+.serviceCard {
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    gap: 5vh;
+    /* 與主背景相同 */
+}
+
+.serviceCards {
+    background-color: #ffffff;
+    display: flex;
+    gap: 5px;
+    justify-items: center;
+    width: 100%;
+    max-width: 360px;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.serviceCards:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 20px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+
+.pic {
+    overflow: hidden;
+    width: 360px;
+}
+
+.pic img {
+    width: 100%;
+    height: 224px;
+    max-width: 480px;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serviceCards:hover .pic img {
+    transform: scale(1.05);
+
+}
+
+.cardIntroduce {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cardIntroduce .title h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-weight: 300;
+}
+
+.cardIntroduce h4 {
+    font-size: 14px;
+
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.cardIntroduce h5 {
+    font-size: 16px;
+    margin-top: 16px;
+    font-weight: 300;
+}
+
+.cardIntroduce .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    font-weight: 300;
+}
+
+.cardIntroduce .grid span::before {
+    content: "●";
+    color: #445c41;
+    font-size: 10px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.serviceCards button {
+    background-color: #445c41;
+    border: none;
+    padding: 12px;
+    margin: 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.serviceCards button:hover {
+    background-color: #2e3f2d;
+}
+
+.serviceCards p {
+    color: #ffffff;
+}
+
+.slogan {
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    gap: 10vh;
+}
+
+.sloganItem {
+    text-align: center;
+    display: flex;
+    gap: 5px;
+    justify-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sloganLogo {
+    width: 56px;
+    height: 56px;
+    background-color: #4d6450;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.slogan h3 {
+    font-weight: 300;
+}
+
+.slogan {
+    font-weight: 300;
+}

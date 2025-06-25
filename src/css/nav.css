@@ -1,0 +1,221 @@
+.top-navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease;
+  height: 90px;
+}
+
+.navbar-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 100%;
+  align-items: center;
+}
+
+
+
+.logo-box,
+.nav-links {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.6s ease-out;
+  text-decoration: none !important;
+}
+
+.navbar-animate .logo-box {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.navbar-animate .nav-links {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.navbar-animate .login-button .system-login-button {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.logo-box {
+  gap: 12px;
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  transform: translateY(4px);
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cn-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #737972;
+}
+
+.en-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #737972;
+}
+
+.nav-links {
+  gap: 24px;
+  display: flex;
+}
+
+.nav-text-button {
+  text-decoration: none !important;
+  position: relative;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: oklch(0.373 0.034 259.733);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: none;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.nav-text-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: #4d6450;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.nav-text-button:hover::after,
+.nav-text-button.active::after {
+  transform: scaleX(1);
+}
+
+.nav-text-button:hover {
+  color: #4d6450 !important;
+  transform: translateY(-1px);
+  background-color: transparent !important;
+  box-shadow: 0 2px 8px rgba(77, 100, 80, 0.1);
+  /* ← 如果你還要陰影就留 */
+}
+
+.nav-text-button:active {
+  transform: translateY(0);
+  color: #3d5240 !important;
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4d6450, #6b8e6e, #4d6450);
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(77, 100, 80, 0.3);
+}
+
+.nav-text-button:hover .nav-underline {
+  width: 85%;
+}
+
+.nav-active .nav-underline {
+  width: 100%;
+  background: linear-gradient(90deg, #4d6450, #5a7358, #4d6450);
+  box-shadow: 0 2px 6px rgba(77, 100, 80, 0.4);
+}
+
+.system-login-button {
+  background: linear-gradient(135deg,
+      rgba(77, 100, 80, 0.9),
+      rgba(90, 115, 88, 0.95));
+  backdrop-filter: blur(10px) saturate(1.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(77, 100, 80, 0.3),
+    0 2px 4px rgba(77, 100, 80, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+
+.system-login-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  transition: left 0.6s ease;
+  text-decoration: none;
+}
+
+.system-login-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg,
+      rgba(90, 115, 88, 0.95),
+      rgba(77, 100, 80, 0.9));
+  box-shadow: 0 8px 24px rgba(77, 100, 80, 0.4),
+    0 4px 8px rgba(77, 100, 80, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+
+.system-login-button:hover::before {
+  left: 100%;
+}
+
+.system-login-button:active {
+  transform: scale(0.98);
+}

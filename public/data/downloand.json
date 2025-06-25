@@ -1,0 +1,37 @@
+[
+    {
+        "category": "軟體下載",
+        "files": [
+            {
+                "name": "IoT Toolkit v3.2.1",
+                "type": "exe",
+                "url": "https://www.youtube.com/watch?v=yBLdQ1a4-JI"
+            },
+            {
+                "name": "MLTV Controller",
+                "type": "exe",
+                "url": "https://www.youtube.com/watch?v=nz-V3g6-1KQ"
+            }
+        ]
+    },
+    {
+        "category": "說明書下載",
+        "files": [
+            {
+                "name": "IoT 627 雲 端 數 位 控 制 器 組",
+                "type": "pdf",
+                "url": "https://www.youtube.com/watch?v=ZZ5LpwO-An4"
+            },
+            {
+                "name": "IoT 512 協 議 轉 換 器",
+                "type": "pdf",
+                "url": "https://www.youtube.com/watch?v=j9V78UbdzWI"
+            },
+            {
+                "name": "IoT 127 雲 端 變 頻 冷 凍 冷 藏 機",
+                "type": "pdf",
+                "url": "https://www.youtube.com/watch?v=rZIuVjLeWHU"
+            }
+        ]
+    }
+]

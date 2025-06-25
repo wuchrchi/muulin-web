@@ -1,0 +1,152 @@
+/* 主要下載頁容器 */
+.downloads {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+/* 搜尋區塊 */
+.searchBar {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    align-items: center;
+}
+
+.searchBar input {
+    flex: 2;
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+}
+
+.searchBar select {
+    width: 20%;
+    height: 40px;
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    appearance: none;
+    /* 隱藏原生箭頭（跨瀏覽器支援） */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+}
+
+.searchBar select option {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    background-color: white;
+    color: black;
+}
+
+.searchBar select option:checked {
+    background-color: #4d6450;
+    color: white;
+}
+
+.searchBar input,
+.searchBar select {
+    height: 40px;
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.searchBar button {
+    background-color: #4d6450;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 1.5rem;
+    height: 40px;
+    font-size: 0.95rem;
+}
+
+/* 分類標題 */
+.downloadSection {
+    background-color: #4d6450;
+    border-radius: 16px;
+    width: 80%;
+    overflow: hidden;
+}
+
+.downloadSection .title {
+    margin: 0.75rem 0.75rem 0.75rem 0.75rem;
+}
+
+.downloadSection h2 {
+    color: white;
+
+    font-weight: 300;
+}
+
+.itemList {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+    gap: 16px;
+}
+
+/* 卡片清單項目 */
+.item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 16px;
+}
+
+.file-icon {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: #4d6450;
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+}
+
+.file-icon .downloadIcon {
+    width: 36px;
+    height: 36px;
+
+}
+
+.info {
+    flex: 1;
+    margin-left: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.download-btn {
+    background-color: #4d6450;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: none;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    text-decoration: none;
+}
+
+/* 區塊外框 */
+.downloadSection+.item {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+}

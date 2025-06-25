@@ -1,0 +1,166 @@
+/* 段落 */
+.firstContent,
+.thirdContent {
+  background-color: #eff5ec;
+}
+
+.about {
+  align-content: center;
+  text-align: center;
+}
+
+.about h1 {
+  font-size: 48px;
+  color: #1a1c1a;
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+.about h2 {
+  font-size: 20px;
+  color: #1a1c1a;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.story {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 48px;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.storyText {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.storyText h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #1a1c1a;
+  font-weight: 300;
+}
+
+.storyText p {
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 300;
+  color: #1a1c1a;
+}
+
+.muulinStory {
+  margin-bottom: 12px;
+}
+
+.companyImg {
+  flex: 1;
+  max-width: 480px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.secContent {
+  background-color: #f2f8f2;
+}
+
+.valuesCard {
+  display: flex;
+  height: 100%;
+  gap: 8vh;
+}
+
+.valuesCards {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.thirdContent .valuesCards {
+  background-color: transparent;
+  box-shadow: none;
+  /* 若也不想要陰影可以一起拿掉 */
+}
+
+.icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background-color: #4d6450;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+  stroke: white;
+}
+
+.thirdContent .icon {
+  width: 64px;
+  height: 64px;
+  stroke-width: 2;
+  stroke: white;
+}
+
+.thirdContent .icon-wrapper {
+  width: 100px;
+  height: 100px;
+  background-color: #4d6450;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.value-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a1c1a;
+  margin-bottom: 8px;
+}
+
+.value-text {
+  color: #434842;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* 等待更改 */
+@media (max-width: 932px) {
+  .mainContent {
+    flex-direction: column;
+    /* 改為垂直排列 */
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    gap: 8px;
+    overflow: scroll;
+    flex-grow: 1;
+    height: auto;
+  }
+
+  .rightContent,
+  .leftContent {
+    height: auto;
+    width: 100%;
+    gap: 8px;
+    flex-grow: 1;
+  }
+}
