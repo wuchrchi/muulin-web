@@ -1,4 +1,6 @@
 module.exports = {
-    publicPath: '/',  // GitHub Pages 上的路徑
+     publicPath: process.env.NODE_ENV === 'production'
+    ? '/muulin-web/'
+    : '/' // GitHub Pages 上的路徑
   };
   
