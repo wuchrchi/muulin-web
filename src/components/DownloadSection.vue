@@ -47,7 +47,31 @@
                         </div>
                     </div>
                 </section>
-
+                <section class="secContent" data-aos="fade-up">
+                    <div class="about">
+                        <h2>下載須知</h2>
+                    </div>
+                    <div class="downloadInstructions">
+                        <div class="instructionBlock">
+                            <h3>系統需求</h3>
+                            <ul>
+                                <li>作業系統: Windows 10 或更新版本</li>
+                                <li>記憶體: 4GB RAM（建議 8GB）</li>
+                                <li>硬碟空間: 至少 2GB 可用空間</li>
+                                <li>網路: 穩定的網際網路連線</li>
+                            </ul>
+                        </div>
+                        <div class="instructionBlock">
+                            <h3>注意事項</h3>
+                            <ul>
+                                <li>請確保下載的檔案完整性</li>
+                                <li>安裝前請先關閉防毒軟體</li>
+                                <li>建議以管理員權限執行安裝</li>
+                                <li>如有問題請聯繫技術支援</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
     </transition>
