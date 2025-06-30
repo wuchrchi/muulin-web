@@ -35,18 +35,25 @@
           <div class="nav-underline"></div>
         </router-link>
 
-        <router-link to="/works" class="nav-text-button" :class="{ 'nav-active': route.path === '/works' }">
+        <!-- <router-link to="/works" class="nav-text-button" :class="{ 'nav-active': route.path === '/works' }">
           產品實績
           <div class="nav-underline"></div>
-        </router-link>
+        </router-link> -->
       </div>
 
       <!-- 系統登入 -->
       <div class="nav-links">
-        <router-link to="/login" class="block system-login-button">
+        <!-- <router-link to="/SysteamShowPage" class="block system-login-button"
+          :class="{ 'nav-active': route.path === '/SysteamShowPage' }">
           <span class="button-content">系統登入</span>
           <div class="button-glow"></div>
-        </router-link>
+        </router-link> -->
+
+        <a class="block system-login-button"
+          href="https://www.youtube.com/watch?v=DJfg39WkMvE&list=RDDJfg39WkMvE&start_radio=1">
+          <span class="button-content">系統介紹</span>
+          <div class="button-glow"></div>
+        </a>
       </div>
     </div>
   </nav>

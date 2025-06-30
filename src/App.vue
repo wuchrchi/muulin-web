@@ -20,7 +20,7 @@ export default {
     const navbarKey = ref(Date.now());
     const route = useRoute();
 
-    const hiddenLayoutRoutes = ["/"];
+    const hiddenLayoutRoutes = ["/", "/SysteamShowPage"];
     const hideLayout = computed(() => hiddenLayoutRoutes.includes(route.path));
 
     onMounted(() => {
@@ -41,17 +41,21 @@ export default {
 .fade-in-leave-active {
   transition: opacity 0.4s ease;
 }
+
 .fade-in-enter-from,
 .fade-in-leave-to {
   opacity: 0;
 }
+
 .fade-in-enter-active {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 .fade-in-enter-from {
   opacity: 0;
   transform: translateY(24px);
 }
+
 .fade-in-enter-to {
   opacity: 1;
   transform: translateY(0);

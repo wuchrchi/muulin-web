@@ -21,6 +21,7 @@ import HomePage from "./components/HomePage.vue";
 import ProductService from "./components/ProductService.vue";
 import ResourceSection from "./components/ResourceSection.vue";
 import DownloadSection  from "./components/DownloadSection.vue";
+import SysteamShowPage  from "./components/SysteamShowPage.vue";
 // 初始化
 import "./css/reset.css";
 import "./css/m3color.css";
@@ -31,13 +32,14 @@ import "aos/dist/aos.css";
 // main.js
 import './css/globals.css'; // 或 main.css
 
-AOS.init({ once: true });
+AOS.init({ once: false });
 const routes = [
   { path: "/", component: LoaidngPage },
   { path: "/HomePage", component: HomePage },
   { path: "/ProductService", component: ProductService },
   { path: "/ResourceSection", component: ResourceSection },
-   { path: "/DownloadSection", component: DownloadSection },
+  { path: "/DownloadSection", component: DownloadSection },
+  { path: "/SysteamShowPage", component: SysteamShowPage },
 
 ];
 
@@ -45,6 +47,10 @@ const router = createRouter({
    history: createWebHistory("/muulin-web/"),
   routes,
 });
+// const router = createRouter({
+//    history: createWebHistory("/"),
+//   routes,
+// });
 
 loadFonts();
 
