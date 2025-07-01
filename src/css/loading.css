@@ -116,3 +116,15 @@
     transform: scale(0.95);
   }
 }
+
+@media(max-width: 768px) {
+  .loading-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .company-name p {
+    font-size: 40px;
+
+  }
+}

@@ -230,6 +230,7 @@
     }
 
     .serviceCard {
+        touch-action: pan-y;
         -ms-overflow-style: none;
         /* IE/Edge */
         scrollbar-width: none;
