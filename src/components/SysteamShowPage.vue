@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                     <div class="phone" data-aos="fade-up" data-aos-delay="2200">
-                                        <img src="/assets/phone.png" alt="phone" />
+                                        <img src="./assets/phone.png" alt="phone" />
                                     </div>
                                 </div>
                             </section>
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="monitor" data-aos="fade-up" data-aos-delay="2200">
-                                        <img src="/assets/mac.png" alt="mac" />
+                                        <img src="./assets/mac.png" alt="mac" />
                                     </div>
                                 </div>
                             </section>
