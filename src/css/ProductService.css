@@ -2,7 +2,24 @@
     background-color: #f2f8f2;
 }
 
+.serviceslogan {
+    align-content: center;
+    text-align: center;
+}
 
+.serviceslogan h1 {
+    font-size: 48px;
+    color: #1a1c1a;
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+.serviceslogan h2 {
+    font-size: 20px;
+    color: #1a1c1a;
+    line-height: 1.8;
+    font-weight: 300;
+}
 
 /* 卡片區 */
 
@@ -156,4 +173,148 @@
 
 .slogan {
     font-weight: 300;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+
+
+.pagination.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .serviceslogan {
+        margin-bottom: 24px;
+    }
+
+    .pagination.mobile-only {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    .actionDot {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ccc;
+        transition: background-color 0.3s ease;
+    }
+
+    .actionDot.active {
+        background-color: #445c41;
+        transform: scale(1.4);
+    }
+
+    .serviceCards:hover .pic img {
+        transform: none !important;
+
+    }
+
+    .serviceCards:hover {
+        transform: none !important;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    .serviceCard::-webkit-scrollbar {
+        display: none;
+    }
+
+    .serviceCard {
+        -ms-overflow-style: none;
+        /* IE/Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .serviceCard {
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 24px 0;
+        gap: 16px;
+        margin-left: 16px;
+        margin-right: 10px;
+    }
+
+    .serviceCards {
+        flex: 0 0 90%;
+        max-width: 90%;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .pic img {
+        height: 180px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .cardIntroduce {
+        padding: 16px;
+    }
+
+    .pic {
+        width: 100%;
+    }
+
+
+    .slogan {
+        flex-direction: row;
+        gap: 24px;
+        padding: 0px;
+        justify-content: center;
+        margin: -30px;
+    }
+
+    .sloganItem {
+        max-width: 100px;
+        gap: 8px;
+    }
+
+    .slogan h3 {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .slogan p {
+        font-size: 12px;
+    }
+
+    .sloganLogo {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .sloganLogo img,
+    .sloganLogo svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cardIntroduce h3 {
+        font-size: 18px;
+    }
+
+    .cardIntroduce h4,
+    .cardIntroduce h5 {
+        font-size: 14px;
+    }
+
+    .serviceButton {
+        width: 80%;
+
+    }
 }

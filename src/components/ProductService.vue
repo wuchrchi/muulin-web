@@ -10,7 +10,8 @@
               從設備監控到數據分析，全方位滿足您的需求。
             </h2>
           </div>
-          <div class="serviceCard">
+          <div ref="scrollArea" class="serviceCard" @scroll="handleScroll">
+            <!-- 三張卡片結構保持原樣 -->
             <div class="serviceCards">
               <div class="card">
                 <div class="pic">
@@ -32,19 +33,15 @@
                   </div>
                 </div>
               </div>
-
               <router-link to="/SysteamShowPage" route.path='/SysteamShowPage' class="serviceButton">
                 深入了解
               </router-link>
-
-
             </div>
-            <div class="serviceCards">
 
+            <div class="serviceCards mobile">
               <div class="pic">
                 <img src="./assets/scada.png" alt="operator" class="operatorimg" />
               </div>
-
               <div class="cardIntroduce">
                 <div class="title">
                   <h3>中央監控系統SCADA</h3>
@@ -64,6 +61,7 @@
                 深入了解
               </button>
             </div>
+
             <div class="serviceCards">
               <div class="card">
                 <div class="pic">
@@ -89,58 +87,26 @@
                 深入了解
               </button>
             </div>
+
+            <slot></slot>
+          </div>
+          <!-- Dot Pagination：僅在手機版顯示 -->
+          <div class="pagination mobile-only">
+            <div v-for="n in cardCount" :key="n" :class="['actionDot', { active: currentIndex === n - 1 }]" />
           </div>
         </section>
-        <section class="secContent" data-aos="fade-up">
-          <div class="about">
+
+        <section class="secContent " data-aos="fade-up">
+          <div class="serviceslogan">
             <h2 class="">專業服務支援</h2>
           </div>
           <div class="slogan">
-            <div class="sloganItem">
+            <div class="sloganItem" v-for="(s, idx) in slogans" :key="idx">
               <div class="sloganLogo">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
-                  </path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" v-html="s.icon" />
               </div>
-              <h3>系統整合</h3>
-              <p>客製化系統整合服務</p>
-            </div>
-            <div class="sloganItem">
-              <div class="sloganLogo">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z">
-                  </path>
-                </svg>
-              </div>
-              <h3>技術支援</h3>
-              <p>專業技術支援</p>
-            </div>
-            <div class="sloganItem">
-              <div class="sloganLogo">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                  </path>
-                </svg>
-              </div>
-              <h3>教育訓練</h3>
-              <p>完整的操作教育訓練</p>
-            </div>
-            <div class="sloganItem">
-              <div class="sloganLogo">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                  </path>
-                </svg>
-              </div>
-              <h3>維護保固</h3>
-              <p>長期維護與保固服務</p>
+              <h3>{{ s.title }}</h3>
+              <p>{{ s.description }}</p>
             </div>
           </div>
         </section>
@@ -150,11 +116,53 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
+
+const currentIndex = ref(0);
+const cardCount = ref(0);
+const cardWidth = ref(0);
+const scrollArea = ref(null);
+
+const handleScroll = (event) => {
+  const el = event.target;
+  const card = el.querySelector('.serviceCards');
+  if (!card) return;
+  const cardWidth = card.offsetWidth + 16; // 卡片寬度 + gap（根據你 CSS gap）
+  const index = Math.round(el.scrollLeft / cardWidth);
+  currentIndex.value = Math.min(index, cardCount.value - 1); // 防止超出範圍
+};
 
 onMounted(() => {
   window.scrollTo(0, 0);
+  const el = scrollArea.value = document.querySelector('.serviceCard');
+  const firstCard = el?.querySelector('.serviceCards');
+  cardCount.value = el?.querySelectorAll('.serviceCards').length || 3;
+  cardWidth.value = firstCard?.offsetWidth || 1;
 });
+
+const slogans = [
+  {
+    title: '系統整合',
+    description: '客製化系統整合服務',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>`
+  },
+  {
+    title: '技術支援',
+    description: '專業技術支援',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>`
+  },
+  {
+    title: '教育訓練',
+    description: '完整的操作教育訓練',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>`
+  },
+  {
+    title: '維護保固',
+    description: '長期維護與保固服務',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>`
+  },
+];
 </script>
 
 <style scoped>
