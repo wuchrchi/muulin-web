@@ -230,14 +230,7 @@
     }
 
     .serviceCard {
-        touch-action: pan-y;
-        -ms-overflow-style: none;
-        /* IE/Edge */
-        scrollbar-width: none;
-        /* Firefox */
-    }
 
-    .serviceCard {
         justify-content: flex-start;
         display: flex;
         flex-direction: row;
@@ -254,6 +247,7 @@
         max-width: 90%;
         margin-left: 8px;
         margin-right: 8px;
+        scroll-snap-align: start;
     }
 
     .pic img {
