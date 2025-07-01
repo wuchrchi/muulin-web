@@ -151,7 +151,6 @@
     padding: 8px;
     margin: 0;
     gap: 8px;
-    overflow: scroll;
     flex-grow: 1;
     height: auto;
   }
