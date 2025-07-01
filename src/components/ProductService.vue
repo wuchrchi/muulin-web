@@ -32,9 +32,12 @@
                   </div>
                 </div>
               </div>
-              <button>
-                <p>進入系統</p>
-              </button>
+
+              <router-link to="/SysteamShowPage" route.path='/SysteamShowPage' class="serviceButton">
+                深入了解
+              </router-link>
+
+
             </div>
             <div class="serviceCards">
 
@@ -57,8 +60,8 @@
                   </div>
                 </div>
               </div>
-              <button>
-                <p>深入了解</p>
+              <button class="serviceButton">
+                深入了解
               </button>
             </div>
             <div class="serviceCards">
@@ -82,8 +85,8 @@
                   </div>
                 </div>
               </div>
-              <button>
-                <p>深入了解</p>
+              <button class="serviceButton">
+                深入了解
               </button>
             </div>
           </div>
@@ -146,11 +149,14 @@
   </transition>
 </template>
 
-<script>
-export default {
-  name: "ProductService",
-};
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 </script>
+
 <style scoped>
 @import url(../css/ProductService.css);
 

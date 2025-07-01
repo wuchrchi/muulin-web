@@ -95,7 +95,8 @@ const getDownloadData = async () => {
 }
 
 onMounted(() => {
-    getDownloadData()
+    getDownloadData();
+    window.scrollTo(0, 0);
 })
 
 const filteredSections = computed(() => {

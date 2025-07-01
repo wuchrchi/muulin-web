@@ -1,4 +1,5 @@
 .back-button {
+    margin-left: 5vw;
     position: absolute;
     top: 24px;
     left: 24px;
@@ -117,23 +118,23 @@
 }
 
 .tag1 {
-    top: 130px;
-    left: 60px;
+    top: 10vh;
+    left: 3vw;
 }
 
 .tag2 {
-    top: 30px;
-    left: 600px;
+    top: 5vh;
+    left: 40vw;
 }
 
 .tag3 {
-    top: 10px;
-    left: 1180px;
+    top: 2vh;
+    left: 75vw;
 }
 
 .tag4 {
-    top: 100px;
-    left: 1390px;
+    top: 15vh;
+    left: 85vw;
 }
 
 .leftContent {

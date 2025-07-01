@@ -119,6 +119,9 @@
 <script>
 export default {
   name: "HomePage",
+  mounted() {
+    window.scrollTo(0, 0);
+  }
 };
 </script>
 <style scoped>

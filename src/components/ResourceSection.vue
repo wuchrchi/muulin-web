@@ -59,7 +59,8 @@ const getResources = async () => {
 }
 
 onMounted(() => {
-    getResources()
+    getResources();
+    window.scrollTo(0, 0);
 })
 </script>
 

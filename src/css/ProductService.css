@@ -99,7 +99,7 @@
     vertical-align: middle;
 }
 
-.serviceCards button {
+.serviceButton {
     background-color: #445c41;
     border: none;
     padding: 12px;
@@ -108,9 +108,14 @@
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+
 }
 
-.serviceCards button:hover {
+
+.serviceButton:hover {
     background-color: #2e3f2d;
 }
 
