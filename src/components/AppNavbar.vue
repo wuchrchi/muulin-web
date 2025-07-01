@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['top-navbar', { 'navbar-animate': animateReady }]">
+  <nav :class="['top-navbar', { 'navbar-animate': animateReady }]" role="navigation">
     <div class="navbar-container">
       <!-- Logo 點回首頁 -->
       <router-link to="/HomePage" class="logo-box">
@@ -10,75 +10,93 @@
         </div>
       </router-link>
 
-      <!-- 導覽連結 -->
-      <div class="nav-links">
-        <router-link to="/HomePage" class="nav-text-button" :class="{ 'nav-active': route.path === '/HomePage' }">
-          關於我們
+      <!-- 桌面版導覽連結 -->
+      <div class="nav-links" v-if="!isMobile">
+        <router-link v-for="item in navItems" :key="item.path" :to="item.path" class="nav-text-button"
+          :class="{ 'nav-active': route.path === item.path }">
+          {{ item.label }}
           <div class="nav-underline"></div>
         </router-link>
-
-        <router-link to="/ProductService" class="nav-text-button"
-          :class="{ 'nav-active': route.path === '/ProductService' }">
-          產品服務
-          <div class="nav-underline"></div>
-        </router-link>
-
-        <router-link to="/ResourceSection" class="nav-text-button"
-          :class="{ 'nav-active': route.path === '/ResourceSection' }">
-          資源中心
-          <div class="nav-underline"></div>
-        </router-link>
-
-        <router-link to="/DownloadSection" class="nav-text-button"
-          :class="{ 'nav-active': route.path === '/DownloadSection' }">
-          下載專區
-          <div class="nav-underline"></div>
-        </router-link>
-
-        <!-- <router-link to="/works" class="nav-text-button" :class="{ 'nav-active': route.path === '/works' }">
-          產品實績
-          <div class="nav-underline"></div>
-        </router-link> -->
       </div>
-
-      <!-- 系統登入 -->
-      <div class="nav-links">
-        <router-link to="/SysteamShowPage" class="block system-login-button"
+      <div class="nav-links" v-if="!isMobile">
+        <router-link to="/SysteamShowPage" class="system-login-button"
           :class="{ 'nav-active': route.path === '/SysteamShowPage' }">
           <span class="button-content">系統介紹</span>
           <div class="button-glow"></div>
         </router-link>
-
-        <!-- <a class="block system-login-button"
-          href="https://www.youtube.com/watch?v=DJfg39WkMvE&list=RDDJfg39WkMvE&start_radio=1">
-          <span class="button-content">系統介紹</span>
-          <div class="button-glow"></div>
-        </a> -->
       </div>
+
+      <!-- 漢堡按鈕 -->
+      <button class="hamburger" @click="toggleSidebar" v-show="isMobile" :class="{ active: sidebarOpen }"
+        aria-label="開啟選單" :aria-expanded="sidebarOpen.toString()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- 側邊選單（手機） -->
+      <transition name="slide">
+        <div class="mobile-sidebar" v-if="sidebarOpen">
+          <button class="close-btn" @click="toggleSidebar">×</button>
+          <div class="mobile-links">
+            <router-link v-for="item in navItems" :key="item.path" :to="item.path" class="nav-text-button"
+              :class="{ 'nav-active': route.path === item.path }" @click="sidebarOpen = false">
+              {{ item.label }}
+              <div class="nav-underline"></div>
+            </router-link>
+          </div>
+          <router-link to="/SysteamShowPage" class="system-login-button"
+            :class="{ 'nav-active': route.path === '/SysteamShowPage' }">
+            <span class="button-content">系統介紹</span>
+            <div class="button-glow"></div>
+          </router-link>
+        </div>
+      </transition>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useRoute } from "vue-router";
 
 const animateReady = ref(false);
 const route = useRoute();
+const sidebarOpen = ref(false);
+const isMobile = ref(false);
+
+const toggleSidebar = () => {
+  sidebarOpen.value = !sidebarOpen.value;
+};
+
+const handleResize = () => {
+  isMobile.value = window.innerWidth <= 768;
+};
+
+const navItems = [
+  { path: "/HomePage", label: "關於我們" },
+  { path: "/ProductService", label: "產品服務" },
+  { path: "/ResourceSection", label: "資源中心" },
+  { path: "/DownloadSection", label: "下載專區" },
+];
 
 onMounted(() => {
+  handleResize();
+  window.addEventListener('resize', handleResize);
   const hasAnimated = sessionStorage.getItem("hasAnimated");
 
-  // ✅ 如果還沒動畫過才延遲顯示
   if (!hasAnimated) {
     setTimeout(() => {
       animateReady.value = true;
       sessionStorage.setItem("hasAnimated", "true");
-    }, 500); // 動畫時間，建議與 CSS 動畫對應
+    }, 500);
   } else {
-    // ✅ 第二次之後直接顯示
     animateReady.value = true;
   }
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
 });
 </script>
 
