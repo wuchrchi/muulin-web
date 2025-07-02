@@ -21,7 +21,7 @@ import HomePage from "./components/HomePage.vue";
 import ProductService from "./components/ProductService.vue";
 import ResourceSection from "./components/ResourceSection.vue";
 import DownloadSection  from "./components/DownloadSection.vue";
-import SysteamShowPage  from "./components/SysteamShowPage.vue";
+import SysteamPage  from "./components/SysteamPage.vue";
 // 初始化
 import "./css/reset.css";
 import "./css/m3color.css";
@@ -39,7 +39,7 @@ const routes = [
   { path: "/ProductService", component: ProductService },
   { path: "/ResourceSection", component: ResourceSection },
   { path: "/DownloadSection", component: DownloadSection },
-  { path: "/SysteamShowPage", component: SysteamShowPage },
+  { path: "/SysteamPage", component: SysteamPage },
 
 ];
 

@@ -1,9 +1,8 @@
 <template id="SysteamShowPage">
     <transition name="fade-in">
         <div>
-
-            <button @click="goBack" class="back-button">← 返回</button>
-            <div class="fade-wrapper">
+            <button @click="goBack" class="backButton">← 返回</button>
+            <div class="fadeWrapper">
                 <section class="animate" :key="aosKey">
                     <div class="animateContent">
                         <div class="tags tagContainer">
@@ -104,9 +103,12 @@ const triggerTyping = () => {
 };
 
 onMounted(() => {
+    const isMobile = window.innerWidth <= 768;
     nextTick(() => {
-        AOS.init({ duration: 1000, once: false });
-        AOS.refreshHard();
+        if (!isMobile) {
+            AOS.init({ duration: 1000, once: true });
+            AOS.refreshHard();
+        }
         triggerTyping();
     });
 });
@@ -124,5 +126,5 @@ watch(
 </script>
 
 <style scoped>
-@import url(../css/SysteamShowPage.css);
+@import url(../css/SysteamPage.css);
 </style>

@@ -20,7 +20,7 @@ export default {
     const navbarKey = ref(Date.now());
     const route = useRoute();
 
-    const hiddenLayoutRoutes = ["/", "/SysteamShowPage"];
+    const hiddenLayoutRoutes = ["/", "/SysteamPage"];
     const hideLayout = computed(() => hiddenLayoutRoutes.includes(route.path));
 
     onMounted(() => {
