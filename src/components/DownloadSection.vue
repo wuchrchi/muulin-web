@@ -12,7 +12,7 @@
                         </h2>
                     </div>
                     <div class="searchBar">
-                        <input type="text" placeholder="搜尋檔案名稱或關鍵字..." v-model="keyword" />
+                        <input type="text" placeholder="搜尋檔案名稱或關鍵字..." v-model="keyword" class="" />
                         <select v-model="selectedType">
                             <option value="">所有類型</option>
                             <option value="exe">exe</option>

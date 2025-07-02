@@ -176,3 +176,42 @@
     list-style: disc;
     font-weight: 300;
 }
+
+@media (max-width: 768px) {
+    .searchBar {
+        width: 100%;
+    }
+
+    .searchBar input {
+        display: none;
+    }
+
+    .searchBar select {
+        width: 100%;
+    }
+
+    .searchBar button {
+        display: none;
+    }
+
+    .downloadSection {
+        width: 100%;
+    }
+
+    .downloadInstructions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        height: auto;
+        padding: 0;
+    }
+
+    .instructionBlock h3 {
+        font-size: 1rem;
+    }
+
+    .instructionBlock ul {
+        padding-left: 0.8rem;
+    }
+
+}
