@@ -33,7 +33,7 @@
                   </div>
                 </div>
               </div>
-              <router-link to="/SysteamShowPage" route.path='/SysteamShowPage' class="serviceButton">
+              <router-link to="/SysteamPage" route.path='/SysteamShowPage' class="serviceButton">
                 深入了解
               </router-link>
             </div>

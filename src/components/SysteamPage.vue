@@ -67,6 +67,12 @@
                             </section>
                         </section>
                     </div>
+                    <section class="secContent " data-aos="fade-up">
+                        <div class="serviceslogan">
+                            <h2 class="">功能支援</h2>
+                        </div>
+
+                    </section>
                 </section>
             </div>
         </div>
@@ -114,7 +120,7 @@ const triggerTyping = () => {
 };
 const rightReady = ref(false);
 onMounted(() => {
-
+    window.scrollTo(0, 0);
     isMobile.value = window.innerWidth <= 768;
     nextTick(() => {
         if (!isMobile.value) {
