@@ -67,12 +67,12 @@
                             </section>
                         </section>
                     </div>
-                    <section class="secContent " data-aos="fade-up">
+                    <!-- <section class="secContent " data-aos="fade-up">
                         <div class="serviceslogan">
                             <h2 class="">功能支援</h2>
                         </div>
 
-                    </section>
+                    </section> -->
                 </section>
             </div>
         </div>
