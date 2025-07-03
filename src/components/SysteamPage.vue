@@ -5,16 +5,18 @@
             <div class="fadeWrapper">
                 <section class="animate" :key="aosKey">
                     <div class="animateContent">
-                        <div class="tags tagContainer">
-                            <div class="tag tag1" data-aos="fade-down-left" data-aos-delay="800">#警報提醒</div>
-                            <div class="tag tag2" data-aos="fade-up-right" data-aos-delay="1000">#即時監控</div>
-                            <div class="tag tag3" data-aos="fade-down-right" data-aos-delay="1200">#24小時無死角</div>
-                            <div class="tag tag4" data-aos="fade-up-left" data-aos-delay="1400">#安全守護</div>
+                        <!-- tags 區：保留淡入 -->
+                        <div class="tags ">
+                            <div class="tag tag1" data-aos="zoom-in" data-aos-delay="300">#警報提醒</div>
+                            <div class="tag tag2" data-aos="zoom-in" data-aos-delay="600">#即時監控</div>
+                            <div class="tag tag3" data-aos="zoom-in" data-aos-delay="900">#24小時無死角</div>
+                            <div class="tag tag4" data-aos="zoom-in" data-aos-delay="1200">#安全守護</div>
                         </div>
 
+                        <!-- 中間內容區 -->
                         <section class="macWithPhone">
                             <section class="leftContent">
-                                <div class="solganText" data-aos="fade-right" data-aos-delay="600">
+                                <div class="solganText">
                                     <h2 class="tagSub"
                                         :class="[{ 'typewriter-1': showSub1 && !done1 }, { done: done1 }]">
                                         <span v-if="showSub1">能源智控 一目了然</span>
@@ -28,30 +30,35 @@
                                         <span v-if="showSub3">智慧節能 永續守護</span>
                                     </h2>
                                 </div>
+
                                 <div class="actionButtons">
-                                    <div class="buttonBox" data-aos="zoom-in" data-aos-delay="1800">
+                                    <div class="buttonBox" v-if="!isMobile.value" data-aos="zoom-in"
+                                        data-aos-delay="1200">
                                         <div class="actionBtn">
                                             <i class="material-symbols-outlined">phone_iphone</i>
                                             <span>手機畫面</span>
                                             <i class="material-symbols-outlined">chevron_right</i>
                                         </div>
                                     </div>
-                                    <div class="phone" data-aos="fade-up" data-aos-delay="2200">
+                                    <div class="phone" v-if="!isMobile.value" data-aos="fade-up" data-aos-delay="1400">
                                         <img src="./assets/phone.png" alt="phone" />
                                     </div>
                                 </div>
                             </section>
 
-                            <section class="rightContent">
+                            <section class="rightContent" v-show="!isMobile || rightReady"
+                                :class="{ 'fade-in-ready': isMobile && rightReady }">
                                 <div class="actionButtons">
-                                    <div class="buttonBox" data-aos="zoom-in" data-aos-delay="2000">
+                                    <div class="buttonBox" v-if="!isMobile.value" data-aos="zoom-in"
+                                        data-aos-delay="1200">
                                         <div class="actionBtn">
                                             <i class="material-symbols-outlined">computer</i>
                                             <span>電腦畫面</span>
                                             <i class="material-symbols-outlined">chevron_right</i>
                                         </div>
                                     </div>
-                                    <div class="monitor" data-aos="fade-up" data-aos-delay="2200">
+                                    <div class="monitor" v-if="!isMobile.value" data-aos="fade-up"
+                                        data-aos-delay="1400">
                                         <img src="./assets/mac.png" alt="mac" />
                                     </div>
                                 </div>
@@ -69,6 +76,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { ref, onMounted, nextTick, watch } from "vue";
 import { useRoute } from "vue-router";
+const isMobile = ref(false);
+
 
 const route = useRoute();
 const aosKey = ref(Date.now());
@@ -101,13 +110,19 @@ const triggerTyping = () => {
     setTimeout(() => { showSub3.value = true }, 1500)
     setTimeout(() => { done3.value = true }, 3000)
 };
-
+const rightReady = ref(false);
 onMounted(() => {
-    const isMobile = window.innerWidth <= 768;
+
+    isMobile.value = window.innerWidth <= 768;
     nextTick(() => {
-        if (!isMobile) {
+        if (!isMobile.value) {
             AOS.init({ duration: 1000, once: true });
             AOS.refreshHard();
+        }
+        if (isMobile.value) {
+            setTimeout(() => {
+                rightReady.value = true;
+            }, 500); // 視情況調整
         }
         triggerTyping();
     });
@@ -118,7 +133,7 @@ watch(
     () => {
         aosKey.value = Date.now();
         nextTick(() => {
-            AOS.refreshHard();
+            if (!isMobile.value) AOS.refreshHard();
             triggerTyping();
         });
     }
