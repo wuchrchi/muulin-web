@@ -124,7 +124,7 @@ onMounted(() => {
         if (isMobile.value) {
             setTimeout(() => {
                 rightReady.value = true;
-            }, 500); // 視情況調整
+            }, 0); // 視情況調整
         }
         triggerTyping();
     });

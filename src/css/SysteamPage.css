@@ -148,6 +148,7 @@
     justify-content: flex-start;
     gap: 32px;
     position: relative;
+    z-index: 1000;
 }
 
 .rightContent {
@@ -170,6 +171,10 @@
 
 .buttonBox {
     width: 360px;
+}
+
+.leftContent .actionBtn {
+    transform: translate(10%, 5%);
 }
 
 .actionBtn {
@@ -220,14 +225,16 @@
     margin: 0;
 }
 
-.monitor img,
 .phone img {
     width: auto;
     max-width: 100%;
     height: auto;
     display: block;
-
+    scale: 1.1;
+    object-fit: contain;
+    transform: translate(10%, 5%);
 }
+
 
 .monitor img {
     width: auto;
@@ -408,8 +415,13 @@
 
     }
 
+    .leftContent .actionBtn {
+        transform: none !important;
+    }
 
     .phone img {
+        transform: none !important;
+        scale: 1 !important;
         max-width: 280px;
         width: 100%;
         height: auto;
