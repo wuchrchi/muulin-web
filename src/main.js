@@ -43,14 +43,14 @@ const routes = [
 
 ];
 
-// const router = createRouter({
-//    history: createWebHistory("/muulin-web/"),
-//   routes,
-// });
 const router = createRouter({
-   history: createWebHistory("/"),
+   history: createWebHistory("/muulin-web/"),
   routes,
 });
+// const router = createRouter({
+//    history: createWebHistory("/"),
+//   routes,
+// });
 
 loadFonts();
 
