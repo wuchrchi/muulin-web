@@ -9,8 +9,10 @@
                         <div class="tags ">
                             <div class="tag tag1" data-aos="zoom-in" data-aos-delay="300">#警報提醒</div>
                             <div class="tag tag2" data-aos="zoom-in" data-aos-delay="600">#即時監控</div>
-                            <div class="tag tag3" data-aos="zoom-in" data-aos-delay="900">#24小時無死角</div>
-                            <div class="tag tag4" data-aos="zoom-in" data-aos-delay="1200">#安全守護</div>
+                            <div class="tag tag3" v-if="!isMobile.value" data-aos="zoom-in" data-aos-delay="900">
+                                #24小時無死角</div>
+                            <div class="tag tag4" v-if="!isMobile.value" data-aos="zoom-in" data-aos-delay="1200">#安全守護
+                            </div>
                         </div>
 
                         <!-- 中間內容區 -->
