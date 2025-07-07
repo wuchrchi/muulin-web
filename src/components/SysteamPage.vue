@@ -5,14 +5,16 @@
             <div class="fadeWrapper">
                 <section class="animate" :key="aosKey">
                     <div class="animateContent">
-                        <!-- tags 區：保留淡入 -->
-                        <div class="tags ">
-                            <div class="tag tag1" data-aos="zoom-in" data-aos-delay="300">#警報提醒</div>
-                            <div class="tag tag2" data-aos="zoom-in" data-aos-delay="600">#即時監控</div>
-                            <div class="tag tag3" v-if="!isMobile.value" data-aos="zoom-in" data-aos-delay="900">
-                                #24小時無死角</div>
-                            <div class="tag tag4" v-if="!isMobile.value" data-aos="zoom-in" data-aos-delay="1200">#安全守護
-                            </div>
+                        <!-- tags 區 -->
+                        <div class="tags">
+                            <div class="tag tag1" :class="isMobile ? 'fade-slide-up' : ''" data-aos="zoom-in"
+                                data-aos-delay="300">#警報提醒</div>
+                            <div class="tag tag2" :class="isMobile ? 'fade-slide-up' : ''" data-aos="zoom-in"
+                                data-aos-delay="600">#即時監控</div>
+                            <div class="tag tag3" :class="isMobile ? 'fade-slide-up' : ''" v-if="!isMobile.value"
+                                data-aos="zoom-in" data-aos-delay="900">#24小時無死角</div>
+                            <div class="tag tag4" :class="isMobile ? 'fade-slide-up' : ''" v-if="!isMobile.value"
+                                data-aos="zoom-in" data-aos-delay="1200">#安全守護</div>
                         </div>
 
                         <!-- 中間內容區 -->
@@ -35,68 +37,65 @@
 
                                 <div class="actionButtons">
                                     <div class="buttonBox" v-if="!isMobile.value" data-aos="zoom-in"
-                                        data-aos-delay="1200">
+                                        data-aos-delay="1400">
                                         <div class="actionBtn">
                                             <i class="material-symbols-outlined">phone_iphone</i>
                                             <span>手機畫面</span>
                                             <i class="material-symbols-outlined">chevron_right</i>
                                         </div>
                                     </div>
-                                    <div class="phone" v-if="!isMobile.value" data-aos="fade-up" data-aos-delay="1400">
-                                        <img src="./assets/phone.png" alt="phone" />
+                                    <div class="phone" :class="isMobile ? 'fade-zoom' : ''" v-if="!isMobile.value"
+                                        data-aos="fade-up" data-aos-delay="1400">
+                                        <img src="./assets/phone.png" alt="phone" :class="isMobile ? 'phoneFade' : ''"
+                                            v-if="!isMobile.value || rightReady" />
                                     </div>
                                 </div>
                             </section>
 
-                            <section class="rightContent" v-show="!isMobile || rightReady"
-                                :class="{ 'fade-in-ready': isMobile && rightReady }">
+                            <section class="rightContent"
+                                :class="isMobile && rightReady ? 'fade-slide-up' : 'fade-in-ready'"
+                                v-if="!isMobile || rightReady">
                                 <div class="actionButtons">
-                                    <div class="buttonBox" v-if="!isMobile.value" data-aos="zoom-in"
-                                        data-aos-delay="1200">
+                                    <div class="buttonBox" v-if="isMobile ? rightReady : true"
+                                        :class="isMobile ? 'fade-zoom' : ''"
+                                        v-bind="!isMobile ? { 'data-aos': 'zoom-in', 'data-aos-delay': '1400' } : {}">
+
                                         <div class="actionBtn">
                                             <i class="material-symbols-outlined">computer</i>
                                             <span>電腦畫面</span>
                                             <i class="material-symbols-outlined">chevron_right</i>
                                         </div>
                                     </div>
-                                    <div class="monitor" v-if="!isMobile.value" data-aos="fade-up"
-                                        data-aos-delay="1400">
-                                        <img src="./assets/mac.png" alt="mac" />
+                                    <div class="monitor" :class="isMobile ? 'fade-zoom' : ''" v-if="!isMobile.value"
+                                        :data-aos="!isMobile.value ? 'fade-up' : null"
+                                        :data-aos-delay="!isMobile.value ? '1400' : null">
+
+                                        <img src="./assets/mac.png" alt="phone" :class="isMobile ? 'macFade' : ''"
+                                            v-if="!isMobile.value || rightReady" />
                                     </div>
                                 </div>
                             </section>
                         </section>
                     </div>
-
                 </section>
-
             </div>
-            <!-- <section class="secContent " data-aos="fade-up">
-                <div class="serviceslogan">
-                    <h2 class="">功能支援</h2>
-                </div>
-
-            </section> -->
         </div>
-
     </transition>
 </template>
 
 <script setup>
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ref, onMounted, onUnmounted, nextTick, watch } from "vue";
-import { useRoute } from "vue-router";
+import { ref, onMounted, onUnmounted, nextTick } from "vue";
 
 const isMobile = ref(false);
 const rightReady = ref(false);
-const aosKey = ref(Date.now());
-const route = useRoute();
 
 const goBack = () => {
     window.history.back();
 };
 
+// 打字動畫狀態
 const showSub1 = ref(false);
 const showSub2 = ref(false);
 const showSub3 = ref(false);
@@ -112,52 +111,40 @@ const triggerTyping = () => {
     done2.value = false;
     done3.value = false;
 
-    setTimeout(() => { showSub1.value = true }, 500);
-    setTimeout(() => { done1.value = true }, 2000);
-    setTimeout(() => { showSub2.value = true }, 1000);
-    setTimeout(() => { done2.value = true }, 2500);
-    setTimeout(() => { showSub3.value = true }, 1500);
-    setTimeout(() => { done3.value = true }, 3000);
+    setTimeout(() => (showSub1.value = true), 500);
+    setTimeout(() => (done1.value = true), 2000);
+    setTimeout(() => (showSub2.value = true), 1000);
+    setTimeout(() => (done2.value = true), 2500);
+    setTimeout(() => (showSub3.value = true), 1500);
+    setTimeout(() => (done3.value = true), 3000);
 };
 
-// === ✅ Resize 處理 ===
+// RWD 偵測
 const handleResize = () => {
     isMobile.value = window.innerWidth <= 768;
 };
 
 onMounted(() => {
     window.scrollTo(0, 0);
-    handleResize(); // 初始檢查
-    window.addEventListener('resize', handleResize); // 綁定 resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     nextTick(() => {
-        if (!isMobile.value) {
-            AOS.init({ duration: 1000, once: true });
-            AOS.refreshHard();
-        }
         if (isMobile.value) {
             setTimeout(() => {
                 rightReady.value = true;
-            }, 0);
+            }, 100);
+        } else {
+            AOS.init({ duration: 1000, once: true, mirror: false });
         }
+
         triggerTyping();
     });
 });
 
 onUnmounted(() => {
-    window.removeEventListener('resize', handleResize);
+    window.removeEventListener("resize", handleResize);
 });
-
-watch(
-    () => route.fullPath,
-    () => {
-        aosKey.value = Date.now();
-        nextTick(() => {
-            if (!isMobile.value) AOS.refreshHard();
-            triggerTyping();
-        });
-    }
-);
 </script>
 
 

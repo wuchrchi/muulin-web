@@ -1,59 +1,8 @@
-.backButton {
-    margin-left: 5vw;
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    background: linear-gradient(135deg,
-            rgba(77, 100, 80, 0.9),
-            rgba(90, 115, 88, 0.95));
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 12px;
-    font-size: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(77, 100, 80, 0.3),
-        0 2px 4px rgba(77, 100, 80, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    z-index: 2000;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backButton::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent);
-    transition: left 0.6s ease;
-    text-decoration: none;
-}
-
-.backButton:hover {
-    transform: translateY(-2px) scale(1.02);
-    background: linear-gradient(135deg,
-            rgba(90, 115, 88, 0.95),
-            rgba(77, 100, 80, 0.9));
-    box-shadow: 0 8px 24px rgba(77, 100, 80, 0.4),
-        0 4px 8px rgba(77, 100, 80, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-}
-
-.backButton:hover::before {
-    left: 100%;
-}
-
-.backButton:active {
-    transform: scale(0.98);
-}
-
+/* --------------------
+   RESET & BASE LAYOUT
+--------------------- */
 .fadeWrapper {
     transition: opacity 0.5s ease-in-out;
-    /* position: absolute; */
     inset: 0;
 }
 
@@ -67,48 +16,99 @@
     justify-content: center;
 }
 
-.macWithPhone {
-    display: flex;
-    overflow-y: hidden;
-    max-height: 1100px;
-}
-
-
-
 .animateContent {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-
-.solganText {
-    /* margin-left: 10vh; */
-    transform: translate(60%, 5%);
-    width: auto;
-}
-
-
-.solganText h2.tagSub {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 24px;
-    font-weight: 300;
-    font-size: 2rem;
-    text-overflow: ellipsis;
+/* --------------------
+   BACK BUTTON
+--------------------- */
+.backButton {
+    margin-left: 5vw;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: linear-gradient(135deg, rgba(77, 100, 80, 0.9), rgba(90, 115, 88, 0.95));
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(77, 100, 80, 0.3), 0 2px 4px rgba(77, 100, 80, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    z-index: 2000;
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.backButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+    text-decoration: none;
+}
+
+.backButton:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: linear-gradient(135deg, rgba(90, 115, 88, 0.95), rgba(77, 100, 80, 0.9));
+    box-shadow: 0 8px 24px rgba(77, 100, 80, 0.4), 0 4px 8px rgba(77, 100, 80, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+}
+
+.backButton:hover::before {
+    left: 100%;
+}
+
+.backButton:active {
+    transform: scale(0.98);
+}
+
+/* --------------------
+   DEVICE CONTAINERS
+--------------------- */
+.macWithPhone {
+    display: flex;
+    overflow-y: hidden;
+    max-height: 1100px;
+}
+
+.leftContent {
+    margin-top: 10vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+    position: relative;
+    z-index: 1000;
+}
+
+.rightContent {
+    margin-top: 10vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 32px;
+    position: relative;
+}
+
+/* --------------------
+   TAG STYLING
+--------------------- */
 .tags {
     animation: float 2s ease-in-out infinite;
-    position: static;
     position: relative;
     z-index: 1000;
 }
 
 .tag {
-    /* animation: float 2s ease-in-out infinite; */
     position: absolute;
     background-color: #faf9f6;
     border: 1px solid #737972;
@@ -140,33 +140,55 @@
     left: 85vw;
 }
 
-.leftContent {
-    margin-top: 10vh;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 32px;
-    position: relative;
-    z-index: 1000;
+/* --------------------
+   TEXT ANIMATIONS
+--------------------- */
+.solganText {
+    transform: translate(60%, 5%);
+    width: auto;
 }
 
-.rightContent {
-    margin-top: 10vh;
-    width: 80%;
+.solganText h2.tagSub {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    gap: 32px;
-    position: relative;
-
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-weight: 300;
+    font-size: 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
+.typewriter-1,
+.typewriter-2,
+.typewriter-3 {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    border-right: 0.15em solid #434842;
+    animation: typing 2s steps(20, end), blink-caret 0.3s step-end infinite;
+}
+
+.typewriter-2 {
+    animation: typing 2s steps(22, end), blink-caret 0.3s step-end infinite;
+}
+
+.typewriter-3 {
+    animation: typing 2s steps(25, end) forwards, blink-caret 0.3s step-end 2s 1;
+}
+
+.done {
+    border-right: none !important;
+    animation: none !important;
+}
+
+/* --------------------
+   ACTION BUTTONS
+--------------------- */
 .actionButtons {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .buttonBox {
@@ -179,18 +201,15 @@
 
 .actionBtn {
     background-color: #faf9f6;
-    border-radius: 5px;
+    border-radius: 12px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
+    padding: 16px 24px;
     font-size: 16px;
-    /* color: #1a1c1a; */
     border: 1px solid #eee;
     cursor: pointer;
-    padding: 16px 24px;
-    border-radius: 12px;
     transition: all 0.3s ease;
     z-index: 2000;
 }
@@ -199,8 +218,11 @@
     background-color: #e6e6e6;
 }
 
+/* --------------------
+   DEVICE IMAGES
+--------------------- */
+.phone,
 .monitor {
-    flex: 2;
     align-items: center;
     display: flex;
     width: 100%;
@@ -210,81 +232,28 @@
     background-position: center;
     margin: 0;
     position: relative;
-    overflow: hidden;
-}
-
-.phone {
-    flex: 1;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0;
 }
 
 .phone img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    display: block;
     scale: 1.1;
-    object-fit: contain;
     transform: translate(45%, 8%);
 }
 
-
 .monitor img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    display: block;
     scale: 1.2;
-    object-fit: contain;
     transform: translate(10%, 10%);
 }
 
-.typewriter-1 {
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-    border-right: .15em solid #434842;
-    animation: typing 2s steps(20, end),
-        blink-caret 0.3s step-end infinite;
-
-}
-
-
-.typewriter-2 {
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-    border-right: 0.15em solid #434842;
-    animation: typing 2s steps(22, end),
-        blink-caret 0.3s step-end infinite;
-
-}
-
-
-
-.typewriter-3 {
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-    border-right: 0.15em solid #434842;
-    animation: typing 2s steps(25, end) forwards,
-        blink-caret 0.3s step-end 2s 1;
-}
-
+/* --------------------
+   ANIMATIONS
+--------------------- */
 @keyframes typing {
     from {
-        width: 0
+        width: 0;
     }
 
     to {
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -292,13 +261,12 @@
 
     from,
     to {
-        border-color: transparent
+        border-color: transparent;
     }
 
     50% {
         border-color: #434842;
     }
-
 }
 
 @keyframes float {
@@ -313,11 +281,41 @@
     }
 }
 
-.done {
-    border-right: none !important;
-    animation: none !important;
+@keyframes slideFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+@keyframes zoomFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-slide-up {
+    animation: slideFadeInUp 0.8s ease-out both;
+}
+
+.fade-zoom {
+    animation: zoomFadeIn 0.6s ease-out both;
+}
+
+/* --------------------
+   RESPONSIVE
+--------------------- */
 @media (max-width: 1100px) {
     .rightContent {
         opacity: 0;
@@ -352,7 +350,7 @@
         flex-direction: column;
         gap: 32px;
         align-items: center;
-        max-height: 1300PX;
+        max-height: 1300px;
     }
 
     .leftContent,
@@ -360,7 +358,6 @@
         width: 100%;
         margin-left: 0;
         margin-top: 0;
-
     }
 
     .solganText {
@@ -371,7 +368,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* ✨ 關鍵 */
     }
 
     .tagSub {
@@ -392,10 +388,6 @@
         text-overflow: ellipsis;
     }
 
-
-
-
-    /* 模擬靈動感：每張貼紙有不同的位置 */
     .tag1 {
         top: 6%;
         left: 2%;
@@ -414,12 +406,10 @@
     .tag4 {
         top: 70%;
         left: 70%;
-
     }
 
     .actionButtons {
         gap: 20px;
-
     }
 
     .leftContent .actionBtn {
@@ -430,18 +420,33 @@
         transform: none !important;
         scale: 1 !important;
         max-width: 280px;
-        width: 100%;
-        height: auto;
     }
 
     .monitor img {
         z-index: 1000;
         transform: none !important;
         scale: 1 !important;
-        width: 100%;
         max-width: 380px;
-        height: auto;
         will-change: transform;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .phoneFade,
+    .macFade {
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: 3s;
+        opacity: 0;
     }
 }
 
@@ -468,16 +473,22 @@
         font-size: 1.5rem;
     }
 
-
     .leftContent .actionBtn {
         transform: translate(30%, 5%);
     }
-
 
     .phone img {
         transform: translate(25%, 3%);
         scale: 1;
     }
+}
 
+[data-aos].aos-init {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
 
+/* 動畫開始時顯示 */
+[data-aos].aos-animate {
+    opacity: 1;
 }
