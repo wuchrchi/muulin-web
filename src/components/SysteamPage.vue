@@ -67,28 +67,31 @@
                             </section>
                         </section>
                     </div>
-                    <!-- <section class="secContent " data-aos="fade-up">
-                        <div class="serviceslogan">
-                            <h2 class="">功能支援</h2>
-                        </div>
 
-                    </section> -->
                 </section>
+
             </div>
+            <!-- <section class="secContent " data-aos="fade-up">
+                <div class="serviceslogan">
+                    <h2 class="">功能支援</h2>
+                </div>
+
+            </section> -->
         </div>
+
     </transition>
 </template>
 
 <script setup>
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ref, onMounted, nextTick, watch } from "vue";
+import { ref, onMounted, onUnmounted, nextTick, watch } from "vue";
 import { useRoute } from "vue-router";
+
 const isMobile = ref(false);
-
-
-const route = useRoute();
+const rightReady = ref(false);
 const aosKey = ref(Date.now());
+const route = useRoute();
 
 const goBack = () => {
     window.history.back();
@@ -109,19 +112,24 @@ const triggerTyping = () => {
     done2.value = false;
     done3.value = false;
 
-    setTimeout(() => { showSub1.value = true }, 500)
-    setTimeout(() => { done1.value = true }, 2000)
-
-    setTimeout(() => { showSub2.value = true }, 1000)
-    setTimeout(() => { done2.value = true }, 2500)
-
-    setTimeout(() => { showSub3.value = true }, 1500)
-    setTimeout(() => { done3.value = true }, 3000)
+    setTimeout(() => { showSub1.value = true }, 500);
+    setTimeout(() => { done1.value = true }, 2000);
+    setTimeout(() => { showSub2.value = true }, 1000);
+    setTimeout(() => { done2.value = true }, 2500);
+    setTimeout(() => { showSub3.value = true }, 1500);
+    setTimeout(() => { done3.value = true }, 3000);
 };
-const rightReady = ref(false);
+
+// === ✅ Resize 處理 ===
+const handleResize = () => {
+    isMobile.value = window.innerWidth <= 768;
+};
+
 onMounted(() => {
     window.scrollTo(0, 0);
-    isMobile.value = window.innerWidth <= 768;
+    handleResize(); // 初始檢查
+    window.addEventListener('resize', handleResize); // 綁定 resize
+
     nextTick(() => {
         if (!isMobile.value) {
             AOS.init({ duration: 1000, once: true });
@@ -130,10 +138,14 @@ onMounted(() => {
         if (isMobile.value) {
             setTimeout(() => {
                 rightReady.value = true;
-            }, 0); // 視情況調整
+            }, 0);
         }
         triggerTyping();
     });
+});
+
+onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
 });
 
 watch(
@@ -147,6 +159,7 @@ watch(
     }
 );
 </script>
+
 
 <style scoped>
 @import url(../css/SysteamPage.css);
