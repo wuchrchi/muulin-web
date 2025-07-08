@@ -22,6 +22,7 @@ import ProductService from "./components/ProductService.vue";
 import ResourceSection from "./components/ResourceSection.vue";
 import DownloadSection  from "./components/DownloadSection.vue";
 import SysteamPage  from "./components/SysteamPage.vue";
+import ScadaSysteam  from "./components/ScadaSysteam.vue";
 // 初始化
 import "./css/reset.css";
 import "./css/m3color.css";
@@ -40,6 +41,7 @@ const routes = [
   { path: "/ResourceSection", component: ResourceSection },
   { path: "/DownloadSection", component: DownloadSection },
   { path: "/SysteamPage", component: SysteamPage },
+  { path: "/ScadaSysteam", component: ScadaSysteam },
 
 ];
 

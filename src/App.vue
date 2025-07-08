@@ -20,12 +20,13 @@ export default {
     const navbarKey = ref(Date.now());
     const route = useRoute();
 
-    const hiddenLayoutRoutes = ["/", "/SysteamPage"];
+    const hiddenLayoutRoutes = ["/", "/SysteamPage", "/ScadaSysteam"];
     const hideLayout = computed(() => hiddenLayoutRoutes.includes(route.path));
 
     onMounted(() => {
       navbarKey.value = Date.now(); // 強制更新 key
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.body.classList.add('light')
     });
 
     return {
@@ -37,6 +38,8 @@ export default {
 </script>
 
 <style scoped>
+@import url(./css/m3color.css);
+
 .fade-in-enter-active,
 .fade-in-leave-active {
   transition: opacity 0.4s ease;

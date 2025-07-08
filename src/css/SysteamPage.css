@@ -7,7 +7,7 @@
 }
 
 .animate {
-    background-color: #dfe4dc;
+    background-color: var(--md-sys-color-background);
     padding: 40px 0 0 0;
     width: 100%;
     min-height: 100vh;
@@ -30,13 +30,13 @@
     position: absolute;
     top: 24px;
     left: 24px;
-    background: linear-gradient(135deg, rgba(77, 100, 80, 0.9), rgba(90, 115, 88, 0.95));
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
     padding: 8px 12px;
     font-size: 16px;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(77, 100, 80, 0.3), 0 2px 4px rgba(77, 100, 80, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 16px var(--md-sys-color-shadow);
     z-index: 2000;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -56,8 +56,8 @@
 
 .backButton:hover {
     transform: translateY(-2px) scale(1.02);
-    background: linear-gradient(135deg, rgba(90, 115, 88, 0.95), rgba(77, 100, 80, 0.9));
-    box-shadow: 0 8px 24px rgba(77, 100, 80, 0.4), 0 4px 8px rgba(77, 100, 80, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: var(--md-sys-color-primary-fixed);
+    color: var(--md-sys-color-on-primary-container);
     text-decoration: none;
 }
 
@@ -110,12 +110,12 @@
 
 .tag {
     position: absolute;
-    background-color: #faf9f6;
-    border: 1px solid #737972;
+    background-color: var(--md-sys-color-on-primary);
+    border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
     padding: 8px 16px;
-    color: #434842;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--md-sys-color-on-surface);
+    box-shadow: 0px 4px 8px var(--md-sys-color-shadow);
     font-size: 14px;
     white-space: nowrap;
 }
@@ -165,7 +165,7 @@
     overflow: hidden;
     display: inline-block;
     white-space: nowrap;
-    border-right: 0.15em solid #434842;
+    border-right: 0.15em solid var(--md-sys-color-on-surface);
     animation: typing 2s steps(20, end), blink-caret 0.3s step-end infinite;
 }
 
@@ -200,22 +200,22 @@
 }
 
 .actionBtn {
-    background-color: #faf9f6;
+    background-color: var(--md-sys-color-surface);
     border-radius: 12px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px var(--md-sys-color-shadow);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px 24px;
     font-size: 16px;
-    border: 1px solid #eee;
+    color: var(--md-sys-color-on-surface);
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 2000;
 }
 
 .actionBtn:hover {
-    background-color: #e6e6e6;
+    background-color: var(--md-sys-color-on-tertiary);
 }
 
 /* --------------------
@@ -265,7 +265,7 @@
     }
 
     50% {
-        border-color: #434842;
+        border-color: var(--md-sys-color-on-surface);
     }
 }
 

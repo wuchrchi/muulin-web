@@ -1,6 +1,7 @@
-.secContent {
-    background-color: #f2f8f2;
-}
+/* === ProductService.css - M3 色彩變數版本 === */
+
+@import url("./m3color.css");
+
 
 .serviceslogan {
     align-content: center;
@@ -9,31 +10,27 @@
 
 .serviceslogan h1 {
     font-size: 48px;
-    color: #1a1c1a;
+    color: var(--md-sys-color-on-surface);
     margin-bottom: 12px;
     font-weight: 300;
 }
 
 .serviceslogan h2 {
     font-size: 20px;
-    color: #1a1c1a;
+    color: var(--md-sys-color-on-surface);
     line-height: 1.8;
     font-weight: 300;
 }
-
-/* 卡片區 */
-
 
 .serviceCard {
     display: flex;
     justify-content: center;
     padding: 60px 40px;
     gap: 5vh;
-    /* 與主背景相同 */
 }
 
 .serviceCards {
-    background-color: #ffffff;
+    background-color: var(--md-sys-color-secondary-container);
     display: flex;
     gap: 5px;
     justify-items: center;
@@ -41,17 +38,15 @@
     max-width: 360px;
     border-radius: 16px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 16px var(--md-sys-color-shadow);
     flex-direction: column;
     overflow: hidden;
 }
 
 .serviceCards:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 20px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 32px var(--md-sys-color-scrim);
 }
-
-
 
 .pic {
     overflow: hidden;
@@ -69,7 +64,6 @@
 
 .serviceCards:hover .pic img {
     transform: scale(1.05);
-
 }
 
 .cardIntroduce {
@@ -83,21 +77,21 @@
 .cardIntroduce .title h3 {
     font-size: 20px;
     margin-bottom: 8px;
-    font-weight: bold;
     font-weight: 300;
+    color: var(--md-sys-color-on-surface);
 }
 
-.cardIntroduce h4 {
+.cardIntroduce h4,
+.cardIntroduce h5 {
     font-size: 14px;
-
     line-height: 1.6;
     font-weight: 300;
+    color: var(--md-sys-color-on-surface);
 }
 
 .cardIntroduce h5 {
     font-size: 16px;
     margin-top: 16px;
-    font-weight: 300;
 }
 
 .cardIntroduce .grid {
@@ -109,7 +103,7 @@
 
 .cardIntroduce .grid span::before {
     content: "●";
-    color: #445c41;
+    color: var(--md-sys-color-primary);
     font-size: 10px;
     margin-right: 6px;
     display: inline-block;
@@ -117,7 +111,7 @@
 }
 
 .serviceButton {
-    background-color: #445c41;
+    background-color: var(--md-sys-color-primary);
     border: none;
     padding: 12px;
     margin: 24px;
@@ -125,19 +119,14 @@
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s ease;
-    color: #ffffff;
+    color: var(--md-sys-color-on-primary);
     text-decoration: none;
     text-align: center;
-
 }
-
 
 .serviceButton:hover {
-    background-color: #2e3f2d;
-}
-
-.serviceCards p {
-    color: #ffffff;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
 }
 
 .slogan {
@@ -145,6 +134,7 @@
     justify-content: center;
     padding: 60px 40px;
     gap: 10vh;
+    font-weight: 300;
 }
 
 .sloganItem {
@@ -159,7 +149,7 @@
 .sloganLogo {
     width: 56px;
     height: 56px;
-    background-color: #4d6450;
+    background-color: var(--md-sys-color-primary);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -169,10 +159,7 @@
 
 .slogan h3 {
     font-weight: 300;
-}
-
-.slogan {
-    font-weight: 300;
+    color: var(--md-sys-color-on-surface);
 }
 
 .pagination {
@@ -181,8 +168,6 @@
     gap: 8px;
     margin-top: 16px;
 }
-
-
 
 .pagination.mobile-only {
     display: none;
@@ -206,23 +191,19 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: #ccc;
+        background-color: var(--md-sys-color-outline);
         transition: background-color 0.3s ease;
     }
 
     .actionDot.active {
-        background-color: #445c41;
+        background-color: var(--md-sys-color-primary);
         transform: scale(1.4);
     }
 
-    .serviceCards:hover .pic img {
-        transform: none !important;
-
-    }
-
+    .serviceCards:hover .pic img,
     .serviceCards:hover {
         transform: none !important;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06) !important;
+        box-shadow: 0 8px 16px var(--md-sys-color-shadow) !important;
     }
 
     .serviceCard::-webkit-scrollbar {
@@ -230,7 +211,6 @@
     }
 
     .serviceCard {
-
         justify-content: flex-start;
         display: flex;
         flex-direction: row;
@@ -262,7 +242,6 @@
     .pic {
         width: 100%;
     }
-
 
     .slogan {
         flex-direction: row;
@@ -310,6 +289,5 @@
 
     .serviceButton {
         width: 80%;
-
     }
 }

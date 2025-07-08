@@ -18,7 +18,7 @@
                             <option value="exe">exe</option>
                             <option value="pdf">pdf</option>
                         </select>
-                        <button @click="search">搜尋</button>
+
                     </div>
 
                     <!-- 📦 分類區塊 -->
@@ -111,9 +111,7 @@ const filteredSections = computed(() => {
         .filter(section => section.files.length > 0)
 })
 
-const search = () => {
-    // search 在這裡實際上只是觸發了重新 render，因為是 reactive 的
-}
+
 </script>
 
 <style>

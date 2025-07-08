@@ -13,27 +13,27 @@
     justify-content: center;
     gap: 0.75rem;
     margin-bottom: 2rem;
-    background: #fff;
+    background: var(--md-sys-color-surface);
     padding: 1rem 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px var(--md-sys-color-shadow);
     align-items: center;
 }
 
 .searchBar input {
     flex: 2;
     padding: 0 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--md-sys-color-outline);
 }
 
 .searchBar select {
     width: 20%;
     height: 40px;
     padding: 0 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
-    background-color: white;
-    color: black;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
     appearance: none;
     /* 隱藏原生箭頭（跨瀏覽器支援） */
     background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
@@ -45,36 +45,27 @@
 .searchBar select option {
     padding: 0.5rem;
     font-size: 0.95rem;
-    background-color: white;
-    color: black;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
 }
 
 .searchBar select option:checked {
-    background-color: #4d6450;
-    color: white;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
 }
 
 .searchBar input,
 .searchBar select {
     height: 40px;
     padding: 0 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
 }
 
-.searchBar button {
-    background-color: #4d6450;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 0 1.5rem;
-    height: 40px;
-    font-size: 0.95rem;
-}
 
 /* 分類標題 */
 .downloadSection {
-    background-color: #4d6450;
+    background-color: var(--md-sys-color-primary);
     border-radius: 16px;
     width: 80%;
     overflow: hidden;
@@ -85,15 +76,14 @@
 }
 
 .downloadSection h2 {
-    color: white;
-
+    color: var(--md-sys-color-on-primary);
     font-weight: 300;
 }
 
 .itemList {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--md-sys-color-surface);
     width: 100%;
     padding: 0.75rem 0.75rem 0.75rem 0.75rem;
     gap: 16px;
@@ -103,9 +93,9 @@
 .item {
     display: flex;
     align-items: center;
-    background: white;
+    background: var(--md-sys-color-surface);
     padding: 1rem 1.5rem;
-    border: 1px solid #eee;
+    border: 1px solid var(--md-sys-color-outline);
     border-radius: 16px;
 }
 
@@ -113,7 +103,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 16px;
-    background-color: #4d6450;
+    background-color: var(--md-sys-color-primary);
     padding: 0.75rem 0.75rem 0.75rem 0.75rem;
 }
 
@@ -128,12 +118,12 @@
     margin-left: 1rem;
     font-size: 0.95rem;
     line-height: 1.4;
-    color: #333;
+    color: var(--md-sys-color-on-surface);
 }
 
 .download-btn {
-    background-color: #4d6450;
-    color: white;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
     padding: 0.5rem 1rem;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -143,11 +133,13 @@
 
 .download-btn:hover {
     text-decoration: none;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
 }
 
 /* 區塊外框 */
 .downloadSection+.item {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px var(--md-sys-color-shadow);
     margin-bottom: 2rem;
 }
 

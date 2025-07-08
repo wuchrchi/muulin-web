@@ -57,9 +57,9 @@
                   </div>
                 </div>
               </div>
-              <button class="serviceButton">
+              <router-link to="/ScadaSysteam" route.path='/ScadaSysteam' class="serviceButton">
                 深入了解
-              </button>
+              </router-link>
             </div>
 
             <div class="serviceCards">
