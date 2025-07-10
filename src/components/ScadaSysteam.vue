@@ -72,7 +72,7 @@ const activeData = computed(() =>
 
 const getScadaData = async () => {
     try {
-        const res = await axios.get('/data/scadaData.json') // public 資料夾要用絕對路徑
+        const res = await axios.get('./data/scadaData.json') // public 資料夾要用絕對路徑
         scadaModules.value = res.data
         activeKey.value = scadaModules.value[0]?.key || ''
         console.log('載入成功:', scadaModules.value)
