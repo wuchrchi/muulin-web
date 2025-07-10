@@ -1,0 +1,66 @@
+[
+    {
+        "key": "device",
+        "logo": "assets/box.svg",
+        "title": "設備資訊",
+        "image": "assets/scada.png",
+        "cards": [
+            {
+                "title": "設備連線狀況",
+                "content": "所有設備皆連線正常，資料即時同步。"
+            },
+            {
+                "title": "設備現實狀況",
+                "content": "現場設備及時狀態，與異常顯示。"
+            }
+        ]
+    },
+    {
+        "key": "alarm",
+        "logo": "assets/warning.svg",
+        "title": "告警資訊",
+        "image": "assets/scadaalarm.png",
+        "cards": [
+            {
+                "title": "即時告警推播",
+                "content": "異常狀況會即時推播至管理者設備。"
+            },
+            {
+                "title": "歷史告警查詢",
+                "content": "可依日期與設備篩選歷史異常事件。"
+            }
+        ]
+    },
+    {
+        "key": "charts",
+        "logo": "assets/chart.svg",
+        "title": "圖表/報表下載",
+        "image": "assets/scadacharts.png",
+        "cards": [
+            {
+                "title": "能源趨勢圖",
+                "content": "每日/每月/年度能耗趨勢動態呈現。"
+            },
+            {
+                "title": "報表下載",
+                "content": "一鍵產出 PDF 報告，支援自訂範圍與格式。"
+            }
+        ]
+    },
+    {
+        "key": "note",
+        "logo": "assets/note.svg",
+        "title": "日誌紀錄",
+        "image": "assets/scadanote.png",
+        "cards": [
+            {
+                "title": "事件紀錄追蹤",
+                "content": "系統自動記錄登入、異常事件，支援篩選查詢。"
+            },
+            {
+                "title": "彈性查詢介面",
+                "content": "可依條件搜尋歷史事件，快速定位指定日期與紀錄。"
+            }
+        ]
+    }
+]
