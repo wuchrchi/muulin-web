@@ -1,28 +1,22 @@
-/* === SCADA Page - 使用 M3 色彩變數 === */
-
 @import url('./m3color.css');
 
-body {
-    background-color: var(--md-sys-color-surface);
-    font-family: 'Noto Sans TC', sans-serif;
-    color: var(--md-sys-color-on-surface);
-}
-
+/* === 返回按鈕 === */
 .scada-back-button {
     text-decoration: none;
+    margin-left: 5vw;
     position: absolute;
     top: 24px;
     left: 24px;
     background: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-    border-radius: 12px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 500;
-    box-shadow: 0 6px 16px var(--md-sys-color-shadow);
-    z-index: 10;
-    transition: all 0.3s ease-in-out;
     border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px var(--md-sys-color-shadow);
+    z-index: 2000;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scada-back-button:hover {
@@ -31,71 +25,350 @@ body {
     transform: translateY(-2px);
 }
 
+/* === 基本結構 === */
 .scada-container {
-    width: 100%;
-    padding: 96px 6vw;
-    background: var(--md-sys-color-surface);
+    padding-top: 40px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--md-sys-color-background);
     display: flex;
     flex-direction: column;
-    gap: 64px;
     animation: fadeIn 0.5s ease-in;
+    overflow: hidden;
 }
 
-.scada-tags {
+.scada-layout {
+    height: 100%;
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 0.6s ease-in-out both;
+}
+
+.info {
+    height: 80vh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+    position: relative;
+    z-index: 1000;
+    animation: fadeInLeft 0.6s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    animation: fadeInUp 0.4s ease;
+    gap: 16px;
+}
+
+.intro-block {
+
+    padding: 20px;
+    border-radius: 16px;
+
+}
+
+.intro-block h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--md-sys-color-primary);
+}
+
+.intro-block p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/*  */
+.fuctionTitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    margin-bottom: 16px;
+    padding-left: 8px;
+}
+
+.fuctionGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    /* 或你想要的數量 */
+    gap: 12px 12px;
+    padding: 12px;
+    border-radius: 24px;
+    background: var(--md-sys-color-background);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--md-sys-color-outline-variant);
+    justify-items: center;
+    align-items: center;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.fuctionCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.fuctionCard:hover {
+    transform: translateY(-2px);
+    background-color: var(--md-sys-color-primary-container);
+}
+
+.fuctionCard.active {
+    background-color: var(--md-sys-color-primary-container);
+    border-radius: 16px;
+
+}
+
+.fuctionCard:hover .fuctionLogo img,
+.fuctionCard.active .fuctionLogo img {
+    transform: scale(1.2);
+    /* active 狀態也一樣的話可以合併 */
+}
+
+.fuctionCard:hover .fuctionText,
+.fuctionCard.active .fuctionText {
+    color: var(--md-sys-color-primary);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.fuctionLogo {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fuctionLogo img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.fuctionText {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    white-space: nowrap;
+}
+
+
+
+
+/* === 卡片資訊區塊 === */
+.scada-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.scada-card {
+    background: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 24px var(--md-sys-color-shadow);
+    transition: all 0.3s ease;
+}
+
+
+.scada-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--md-sys-color-primary);
+}
+
+.scada-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface);
+}
+
+/* === 標籤浮動區 === */
+.scada-tags {
+    position: relative;
+    animation: float 2s ease-in-out infinite;
+    z-index: 1000;
 }
 
 .scada-tag {
-    background: var(--md-sys-color-surface-container);
+    position: absolute;
+    background-color: var(--md-sys-color-on-primary);
     border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    padding: 8px 16px;
     color: var(--md-sys-color-on-surface);
-    padding: 8px 18px;
-    border-radius: 24px;
     font-size: 14px;
-    box-shadow: 0 2px 6px var(--md-sys-color-shadow);
-    transition: 0.2s ease-in-out;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px var(--md-sys-color-shadow);
 }
 
 .scada-tag:hover {
     background: var(--md-sys-color-surface-container-high);
 }
 
-.scada-headlines {
-    text-align: center;
+.scada-tag.tag1 {
+    top: 3vh;
+    left: 20vw;
+}
+
+.scada-tag.tag2 {
+    top: 15vh;
+    left: 30vw;
+}
+
+.scada-tag.tag3 {
+    top: 80vh;
+    left: 75vw;
+}
+
+
+/* === 模擬畫面區 === */
+.scada-preview {
+    width: 70%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
+    position: relative;
 }
 
-.scada-line {
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--md-sys-color-on-surface);
+.scada-mock {
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+    aspect-ratio: 16 / 10;
+}
+
+.pc-frame {
+    width: 100%;
+    height: auto;
+    display: flex;
+    /* position: relative; */
+    z-index: 1;
+}
+
+.screen-wrapper {
+    position: absolute;
+    top: calc(100% * 0.0242);
+    left: calc(100% * 0.1314);
+    width: calc(100% * 0.846);
+    height: calc(100% * 0.593);
+    z-index: 2;
     overflow: hidden;
-    white-space: nowrap;
-    border-right: 0.15em solid var(--md-sys-color-on-surface);
-    animation: fadeInUp 0.6s ease-in-out both;
+    border-radius: 4px;
+    pointer-events: none;
 }
 
-.typewriter-1 {
-    animation: typing 2s steps(20, end), blink 0.75s step-end infinite;
+.screen-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border-radius: 4px;
+    pointer-events: none;
 }
 
-.typewriter-2 {
-    animation: typing 2s steps(22, end), blink 0.75s step-end infinite;
+/* === 響應式設定 === */
+@media (max-width: 768px) {
+    .scada-container {
+        padding-top: 10vh;
+        width: 100%;
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .scada-layout {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+
+    }
+
+    .info {
+        display: flex;
+        margin: 0;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .scada-card {
+        padding: 8px;
+    }
+
+    .scada-card h3 {
+        font-size: 1rem;
+    }
+
+    .fuctionGrid {
+        gap: 4px;
+        padding: 4px;
+        margin: 8px;
+    }
+
+    .pc-frame {
+        width: 95%;
+    }
+
+    .scada-preview {
+        width: 100%;
+    }
+
+
+    .screen-wrapper {
+        position: absolute;
+        top: calc(100% * 0.0242);
+        left: calc(100% * 0.11);
+        width: calc(100% * 0.82);
+        height: calc(100% * 0.593);
+
+    }
 }
 
-.typewriter-3 {
-    animation: typing 2s steps(25, end) forwards, blink 0.75s step-end 2s 1;
-}
+/* === 動畫區 === */
+@keyframes float {
 
-.done {
-    border-right: none !important;
-    animation: none !important;
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
 }
 
 @keyframes typing {
@@ -142,94 +415,64 @@ body {
     }
 }
 
-.scada-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
-    justify-content: center;
-    animation: fadeInUp 0.6s ease-in-out both;
-}
+@media (min-aspect-ratio: 16/10) {
 
-.scada-info {
-    flex: 1 1 360px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.scada-card {
-    background: var(--md-sys-color-surface);
-    border: 1px solid var(--md-sys-color-outline);
-    border-radius: 16px;
-    padding: 28px 24px;
-    box-shadow: 0 10px 24px var(--md-sys-color-shadow);
-    transition: all 0.3s ease;
-}
-
-.scada-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 28px var(--md-sys-color-shadow);
-}
-
-.scada-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    color: var(--md-sys-color-primary);
-}
-
-.scada-card p {
-    line-height: 1.6;
-    font-size: 15px;
-    color: var(--md-sys-color-on-surface);
-}
-
-.scada-preview {
-    flex: 1 1 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    animation: fadeInUp 0.8s ease-in-out both;
-}
-
-.scada-preview-header {
-    background: var(--md-sys-color-surface-container);
-    border: 1px solid var(--md-sys-color-outline);
-    border-radius: 12px;
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 500;
-    color: var(--md-sys-color-on-surface-variant);
-    box-shadow: 0 2px 8px var(--md-sys-color-shadow);
-    transition: 0.3s;
-}
-
-.scada-preview-header:hover {
-    background-color: var(--md-sys-color-surface-container-high);
-}
-
-.scada-preview-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 20px;
-    box-shadow: 0 14px 32px var(--md-sys-color-shadow);
-    transition: transform 0.3s ease;
-}
-
-.scada-preview-image img:hover {
-    transform: scale(1.02);
-}
-
-/* RWD */
-@media (max-width: 768px) {
+    /* 頁面主容器高度加強填滿，避免上下空隙 */
     .scada-container {
-        padding: 72px 24px;
+        height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
     }
 
+    /* layout 區避免 wrap 造成分離，統一維持橫向兩欄 */
     .scada-layout {
-        flex-direction: column;
+        flex-wrap: nowrap;
         align-items: center;
+        gap: 4vw;
+        padding: 0 4vw;
+    }
+
+    /* info 區調整 margin 與寬度，避免被壓縮 */
+    .info {
+        margin: 0;
+        width: 35%;
+        padding: 2vh 0;
+    }
+
+    /* 預覽區讓螢幕圖最大化 */
+    .scada-preview {
+        width: 65%;
+        max-height: 90vh;
+        align-items: center;
+    }
+
+    /* 模擬框保持比例並限制最大尺寸 */
+    .scada-mock {
+        aspect-ratio: 16 / 10;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .scada-line {
+        font-size: 20px;
+    }
+
+    /* PC 框不放大失真 */
+    .pc-frame {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 內容畫面覆蓋位置調整為16:10下對應位置 */
+    .screen-wrapper {
+        top: calc(100% * 0.0242);
+        left: calc(100% * 0.1314);
+        width: calc(100% * 0.846);
+        height: calc(100% * 0.593);
+    }
+
+    .screen-content {
+        width: 100%;
+        height: 100%;
     }
 }

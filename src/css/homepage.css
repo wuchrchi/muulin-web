@@ -148,7 +148,6 @@
   .mainContent {
     flex-direction: column;
     width: 100%;
-    padding: 8px;
     margin: 0;
     flex-grow: 1;
     height: auto;

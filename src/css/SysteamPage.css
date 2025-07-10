@@ -73,13 +73,13 @@
    DEVICE CONTAINERS
 --------------------- */
 .macWithPhone {
+    margin-top: 10vh;
     display: flex;
-    overflow-y: hidden;
-    max-height: 1100px;
+    overflow: hidden;
+    max-height: 86vh;
 }
 
 .leftContent {
-    margin-top: 10vh;
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -90,7 +90,6 @@
 }
 
 .rightContent {
-    margin-top: 10vh;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -491,4 +490,37 @@
 /* 動畫開始時顯示 */
 [data-aos].aos-animate {
     opacity: 1;
+}
+
+@media (min-aspect-ratio: 16/10) {
+    .macWithPhone {
+        max-height: 83vh;
+    }
+
+    .leftContent {
+        width: 35%;
+        gap: 32px;
+    }
+
+    .rightContent {
+        width: 65%;
+        align-items: center;
+    }
+
+    .monitor img {
+        max-width: 95%;
+        scale: 1.2;
+    }
+
+    .solganText {
+        transform: translate(50%, 5%);
+    }
+
+    .solganText h2.tagSub {
+        font-size: 1.6rem;
+    }
+
+    .leftContent .actionBtn {
+        transform: translate(35%, 5%);
+    }
 }
