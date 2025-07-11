@@ -13,6 +13,7 @@ import { ref, onMounted, computed } from "vue";
 import AppNavbar from "./components/AppNavbar.vue";
 import MuulinFooter from "./components/MuulinFooter.vue";
 
+
 export default {
   name: "App",
   components: { AppNavbar, MuulinFooter },

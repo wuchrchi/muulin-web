@@ -23,6 +23,7 @@
     "echarts": "^5.5.1",
     "material-design-icons": "^3.0.1",
     "material-symbols": "^0.22.2",
+    "pinch-zoom-element": "^1.1.1",
     "roboto-fontface": "*",
     "typeface-noto-sans-tc": "^1.1.13",
     "vue": "^3.2.13",

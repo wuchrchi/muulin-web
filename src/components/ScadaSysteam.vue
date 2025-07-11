@@ -60,11 +60,16 @@
                 </div>
             </div>
         </section>
-
-        <dialog v-if="showZoom" class="zoom-dialog" open @click.self="closeZoom">
-            <img :src="activeData?.image" :alt="activeData?.title" class="zoomed-image" />
-        </dialog>
-
+        <transition name="zoom-fade">
+            <dialog v-if="showZoom" class="zoom-dialog" open @click.self="closeZoom">
+                <dialog v-if="showZoom" class="zoom-dialog" open @click.self="closeZoom">
+                    <pinch-zoom>
+                        <img :src="activeData?.image_hd || activeData?.image" :alt="activeData?.title"
+                            class="zoomed-image" />
+                    </pinch-zoom>
+                </dialog>
+            </dialog>
+        </transition>
     </div>
 </template>
 

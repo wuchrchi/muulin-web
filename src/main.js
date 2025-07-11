@@ -29,6 +29,7 @@ import "./css/m3color.css";
 import "./css/container.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import 'pinch-zoom-element';
 
 // main.js
 import './css/globals.css'; // 或 main.css
@@ -45,14 +46,14 @@ const routes = [
 
 ];
 
-const router = createRouter({
-   history: createWebHistory("/muulin-web/"),
-  routes,
-});
 // const router = createRouter({
-//    history: createWebHistory("/"),
+//    history: createWebHistory("/muulin-web/"),
 //   routes,
 // });
+const router = createRouter({
+   history: createWebHistory("/"),
+  routes,
+});
 
 loadFonts();
 
