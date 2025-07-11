@@ -314,7 +314,8 @@
         padding-top: 10vh;
         width: 100%;
         flex-direction: column;
-        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 
     .scada-layout {
