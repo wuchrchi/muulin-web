@@ -190,6 +190,17 @@
         width: 100%;
     }
 
+    .file-icon {
+        margin-right: 10px;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .file-icon .downloadIcon {
+        width: 24px;
+        height: 24px;
+
+    }
+
     .downloadInstructions {
         display: flex;
         flex-direction: column;

@@ -15,7 +15,7 @@
             <!-- Content Layout -->
             <div class="scada-layout">
                 <!-- Info Block -->
-                <div class="info">
+                <div class="infomation">
                     <!-- 介紹區塊 -->
                     <div class="intro-block ">
                         <h2>SCADA 智慧控制系統</h2>
@@ -51,12 +51,20 @@
                     <div class="scada-mock">
                         <img src="./assets/pc.png" class="pc-frame" alt="SCADA Frame" />
                         <div class="screen-wrapper">
-                            <img :src="activeData?.image" class="screen-content" :alt="activeData?.title" />
+                            <img :src="activeData?.image" class="screen-content" :alt="activeData?.title"
+                                @click="openZoom" />
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
+
+        <dialog v-if="showZoom" class="zoom-dialog" open @click.self="closeZoom">
+            <img :src="activeData?.image" :alt="activeData?.title" class="zoomed-image" />
+        </dialog>
+
     </div>
 </template>
 
@@ -69,7 +77,15 @@ const activeKey = ref('')
 const activeData = computed(() =>
     scadaModules.value.find((mod) => mod.key === activeKey.value)
 )
+const showZoom = ref(false)
 
+const openZoom = () => {
+    showZoom.value = true
+}
+
+const closeZoom = () => {
+    showZoom.value = false
+}
 const getScadaData = async () => {
     try {
         const scadaData = await axios.get('./data/scadaData.json') // public 資料夾要用絕對路徑
