@@ -62,12 +62,12 @@
         </section>
         <transition name="zoom-fade">
             <dialog v-if="showZoom" class="zoom-dialog" open @click.self="closeZoom">
-                <dialog v-if="showZoom" class="zoom-dialog" open @click.self="closeZoom">
-                    <pinch-zoom>
-                        <img :src="activeData?.image_hd || activeData?.image" :alt="activeData?.title"
-                            class="zoomed-image" />
-                    </pinch-zoom>
-                </dialog>
+                <!-- ✅ 手機才顯示關閉按鈕 -->
+                <button v-if="isMobile" class="close-button" @click="closeZoom">✕</button>
+                <pinch-zoom>
+                    <img :src="activeData?.image_hd || activeData?.image" :alt="activeData?.title"
+                        class="zoomed-image" />
+                </pinch-zoom>
             </dialog>
         </transition>
     </div>
@@ -83,11 +83,11 @@ const activeData = computed(() =>
     scadaModules.value.find((mod) => mod.key === activeKey.value)
 )
 const showZoom = ref(false)
-
 const openZoom = () => {
-    showZoom.value = true
+    if (window.innerWidth <= 768) {
+        showZoom.value = true
+    }
 }
-
 const closeZoom = () => {
     showZoom.value = false
 }
