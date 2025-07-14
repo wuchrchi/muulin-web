@@ -445,13 +445,12 @@
         position: absolute;
         top: 16px;
         right: 16px;
-        background: rgba(255, 255, 255, 0.9);
-        color: #000;
+        color: var(--md-sys-color-on-primary);
         border: none;
         border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        font-size: 26px;
         cursor: pointer;
         z-index: 9999;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -459,7 +458,7 @@
     }
 
     .close-button:hover {
-        background: rgba(255, 255, 255, 1);
+        background: var(--md-sys-color-on-primary);
     }
 }
 

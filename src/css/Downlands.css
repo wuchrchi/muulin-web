@@ -97,6 +97,7 @@
     padding: 1rem 1.5rem;
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 16px;
+    gap: 16px;
 }
 
 .file-icon {

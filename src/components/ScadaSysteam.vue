@@ -63,7 +63,7 @@
         <transition name="zoom-fade">
             <dialog v-if="showZoom" class="zoom-dialog" open @click.self="closeZoom">
                 <!-- ✅ 手機才顯示關閉按鈕 -->
-                <button v-if="isMobile" class="close-button" @click="closeZoom">✕</button>
+                <button v-if="showZoom" class="close-button" @click="closeZoom">✕</button>
                 <pinch-zoom>
                     <img :src="activeData?.image_hd || activeData?.image" :alt="activeData?.title"
                         class="zoomed-image" />
