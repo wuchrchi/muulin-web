@@ -1,5 +1,11 @@
 @import url('./m3color.css');
 
+.scada-wrapper {
+    height: 100vh;
+    transition: opacity 0.5s ease-in-out;
+    inset: 0;
+}
+
 /* === 返回按鈕 === */
 .scada-back-button {
     text-decoration: none;
@@ -41,17 +47,20 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     animation: fadeInUp 0.6s ease-in-out both;
+    gap: 2vw;
+    padding: 0 4vw;
 }
 
 .infomation {
-    height: 80vh;
+    height: 90vh;
     width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 32px;
+    gap: 16px;
     position: relative;
     z-index: 1000;
     animation: fadeInLeft 0.6s ease-in-out;
@@ -82,10 +91,8 @@
 }
 
 .intro-block {
-
     padding: 20px;
     border-radius: 16px;
-
 }
 
 .intro-block h2 {
@@ -100,13 +107,7 @@
 }
 
 /*  */
-.fuctionTitle {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--md-sys-color-on-surface);
-    margin-bottom: 16px;
-    padding-left: 8px;
-}
+
 
 .fuctionGrid {
     display: grid;
@@ -205,7 +206,8 @@
     transition: all 0.3s ease;
 }
 
-
+.fuctions h3,
+.support-features h3,
 .scada-card h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
@@ -242,13 +244,13 @@
 }
 
 .scada-tag.tag1 {
-    top: 3vh;
-    left: 20vw;
+    top: 2vh;
+    left: 22vw;
 }
 
 .scada-tag.tag2 {
     top: 15vh;
-    left: 30vw;
+    left: 35vw;
 }
 
 .scada-tag.tag3 {
@@ -259,25 +261,24 @@
 
 /* === 模擬畫面區 === */
 .scada-preview {
-    width: 70%;
+    width: 65%;
+    max-height: 85vh;
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
     position: relative;
 }
 
 .scada-mock {
     position: relative;
-    width: 100%;
-    max-width: 880px;
-    aspect-ratio: 16 / 10;
+    max-width: 100%;
+    height: auto;
 }
 
 .pc-frame {
     width: 100%;
     height: auto;
     display: flex;
-    /* position: relative; */
     z-index: 1;
 }
 
@@ -303,8 +304,231 @@
     cursor: zoom-in;
 }
 
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.support-features {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+.support-item {
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.support-item img {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.5rem;
+}
+
+.support-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* === 動畫區 === */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--md-sys-color-on-surface);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 動畫進出：縮放 + 淡入淡出 */
+.zoom-fade-enter-active,
+.zoom-fade-leave-active {
+    transition: all 0.3s ease;
+}
+
+.zoom-fade-enter-from {
+    opacity: 0;
+    transform: scale(0.7);
+}
+
+.zoom-fade-enter-to {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.zoom-fade-leave-from {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.zoom-fade-leave-to {
+    opacity: 0;
+    transform: scale(0.7);
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+    .infomation {
+        margin: 0;
+        gap: 1vh;
+        width: 45%;
+    }
+
+    .infomation h2 {
+        font-size: 1.6rem;
+    }
+
+
+    .scada-tag.tag1 {
+        top: -1vh;
+        left: 22vw;
+    }
+
+    .scada-tag.tag2 {
+        top: 12vh;
+        left: 43vw;
+    }
+
+    .scada-tag.tag3 {
+        top: 80vh;
+        left: 75vw;
+    }
+
+
+
+
+    .scada-layout {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 0.5vw;
+        padding: 0 4vw 2vw 2vw;
+    }
+
+
+
+
+    .support-grid {
+        grid-template-columns: repeat(6, 4fr);
+    }
+
+    .info-section {
+        padding: 2px 4px 4px 2px;
+        border-radius: 20px;
+        gap: 1vh;
+    }
+
+    .scada-card h3 {
+        font-size: 1rem;
+    }
+
+    .scada-card {
+        padding: 10px 8px 10px 24px;
+        box-shadow: 0 10px 24px var(--md-sys-color-shadow);
+        transition: all 0.3s ease;
+    }
+
+
+
+    .scada-preview {
+        width: 55%;
+        max-height: 90vh;
+        align-items: center;
+    }
+
+
+    .scada-mock {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .scada-line {
+        font-size: 20px;
+    }
+
+
+    .pc-frame {
+        width: 100%;
+        height: auto;
+    }
+
+
+    .screen-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .fuctionCard {
+        gap: 4px;
+        padding: 4px 8px;
+    }
+}
+
+
 /* === 響應式設定 === */
 @media (max-width: 768px) {
+    .scada-wrapper {
+        height: 100%;
+
+    }
+
     .intro-block {
         padding: 10px;
         text-align: center;
@@ -312,10 +536,12 @@
 
     .scada-container {
         padding-top: 10vh;
+        height: 100%;
         width: 100%;
         flex-direction: column;
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
+
     }
 
     .scada-layout {
@@ -345,6 +571,7 @@
         margin: 0;
         width: 100%;
         gap: 4px;
+        height: auto;
     }
 
     .scada-card {
@@ -366,12 +593,25 @@
         padding: 4px 8px;
     }
 
+    .support-features {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0;
+        border-top: 1px solid #ddd;
+        padding-top: 1rem;
+    }
+
+    .support-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .pc-frame {
         width: 95%;
     }
 
     .scada-preview {
         width: 100%;
+        flex-direction: column;
     }
 
 
@@ -460,149 +700,12 @@
     .close-button:hover {
         background: var(--md-sys-color-on-primary);
     }
-}
 
-/* === 動畫區 === */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
+    .desktop-only {
+        display: none !important;
     }
 
-    50% {
-        transform: translateY(-6px) rotate(2deg);
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: var(--md-sys-color-on-surface);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 動畫進出：縮放 + 淡入淡出 */
-.zoom-fade-enter-active,
-.zoom-fade-leave-active {
-    transition: all 0.3s ease;
-}
-
-.zoom-fade-enter-from {
-    opacity: 0;
-    transform: scale(0.7);
-}
-
-.zoom-fade-enter-to {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.zoom-fade-leave-from {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.zoom-fade-leave-to {
-    opacity: 0;
-    transform: scale(0.7);
-}
-
-@media (min-aspect-ratio: 16/10) {
-
-    /* 頁面主容器高度加強填滿，避免上下空隙 */
-    .scada-container {
-        height: 100vh;
-        max-height: 100vh;
-        overflow: hidden;
-    }
-
-    /* layout 區避免 wrap 造成分離，統一維持橫向兩欄 */
-    .scada-layout {
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 4vw;
-        padding: 0 4vw;
-    }
-
-    /* info 區調整 margin 與寬度，避免被壓縮 */
-    .info {
-        margin: 0;
-        width: 35%;
-        padding: 2vh 0;
-    }
-
-    /* 預覽區讓螢幕圖最大化 */
-    .scada-preview {
-        width: 65%;
-        max-height: 90vh;
-        align-items: center;
-    }
-
-    /* 模擬框保持比例並限制最大尺寸 */
-    .scada-mock {
-        aspect-ratio: 16 / 10;
-        max-width: 100%;
-        height: auto;
-    }
-
-    .scada-line {
-        font-size: 20px;
-    }
-
-    /* PC 框不放大失真 */
-    .pc-frame {
-        width: 100%;
-        height: auto;
-    }
-
-    /* 內容畫面覆蓋位置調整為16:10下對應位置 */
-    .screen-wrapper {
-        top: calc(100% * 0.0242);
-        left: calc(100% * 0.1314);
-        width: calc(100% * 0.846);
-        height: calc(100% * 0.593);
-    }
-
-    .screen-content {
-        width: 100%;
-        height: 100%;
+    .mobile-only {
+        display: flex !important;
     }
 }

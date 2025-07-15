@@ -1,10 +1,10 @@
 [
     {
         "key": "device",
-        "logo": "assets/box.svg",
+        "logo": "assets/scada/box.svg",
         "title": "設備資訊",
-        "image": "assets/scada.png",
-        "image_hd": "assets/scada_hd.png",
+        "image": "assets/scada/scada.png",
+        "image_hd": "assets/scada/scada_hd.png",
         "cards": [
             {
                 "title": "設備連線狀況",
@@ -18,10 +18,10 @@
     },
     {
         "key": "alarm",
-        "logo": "assets/warning.svg",
+        "logo": "assets/scada/warning.svg",
         "title": "告警資訊",
-        "image": "assets/scadaalarm.png",
-        "image_hd": "assets/scadaalarm_hd.png",
+        "image": "assets/scada/scadaalarm.png",
+        "image_hd": "assets/scada/scadaalarm_hd.png",
         "cards": [
             {
                 "title": "即時告警推播",
@@ -35,10 +35,10 @@
     },
     {
         "key": "charts",
-        "logo": "assets/chart.svg",
+        "logo": "assets/scada/chart.svg",
         "title": "圖表/報表下載",
-        "image": "assets/scadacharts.png",
-        "image_hd": "assets/scadacharts_hd.png",
+        "image": "assets/scada/scadacharts.png",
+        "image_hd": "assets/scada/scadacharts_hd.png",
         "cards": [
             {
                 "title": "能源趨勢圖",
@@ -52,10 +52,10 @@
     },
     {
         "key": "note",
-        "logo": "assets/note.svg",
+        "logo": "assets/scada/note.svg",
         "title": "日誌紀錄",
-        "image": "assets/scadanote.png",
-        "image_hd": "assets/scadanote_hd.png",
+        "image": "assets/scada/scadanote.png",
+        "image_hd": "assets/scada/scadanote_hd.png",
         "cards": [
             {
                 "title": "事件紀錄追蹤",
@@ -63,7 +63,7 @@
             },
             {
                 "title": "彈性查詢介面",
-                "content": "可依條件搜尋歷史事件，快速定位指定日期與紀錄。"
+                "content": "可依條件搜尋歷史事件，快速定位日期與紀錄。"
             }
         ]
     }

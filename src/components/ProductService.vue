@@ -40,7 +40,7 @@
 
             <div class="serviceCards mobile">
               <div class="pic">
-                <img src="./assets/scada.png" alt="operator" class="operatorimg" />
+                <img src="./assets/scada/scada.png" alt="operator" class="operatorimg" />
               </div>
               <div class="cardIntroduce">
                 <div class="title">
