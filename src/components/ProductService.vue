@@ -83,9 +83,9 @@
                   </div>
                 </div>
               </div>
-              <button class="serviceButton">
+              <router-link to="/TVSysteam" route.path='/TVSysteam' class="serviceButton">
                 深入了解
-              </button>
+              </router-link>
             </div>
 
             <slot></slot>

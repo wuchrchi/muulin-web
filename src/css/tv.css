@@ -1,0 +1,74 @@
+.tv-preview {
+    width: 70%;
+    max-height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.tv-mock {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+}
+
+.tv-frame {
+    width: 95%;
+    height: auto;
+    display: flex;
+    z-index: 1;
+}
+
+
+
+.tvscreen-wrapper {
+    position: absolute;
+    top: calc(100% * 0.2042);
+    left: calc(100% * 0.0314);
+    width: calc(100% * 0.888);
+    height: calc(100% * 0.593);
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.tvscreen-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border-radius: 4px;
+    pointer-events: auto;
+    cursor: zoom-in;
+}
+
+.tvfuctionGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 4fr);
+    /* 或你想要的數量 */
+    gap: 12px;
+    padding: 12px;
+    border-radius: 24px;
+    background: var(--md-sys-color-background);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--md-sys-color-outline-variant);
+    justify-items: center;
+    align-items: center;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.tvsupport-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .tv-preview {
+        width: 100%;
+        flex-direction: column;
+    }
+}
