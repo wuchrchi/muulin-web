@@ -1,0 +1,53 @@
+[
+    {
+        "key": "tv1",
+        "logo": "assets/tv/control.svg",
+        "title": "格式一",
+        "image": "assets/tv/tv1.png",
+        "image_hd": "assets/tv/tv1.png",
+        "cards": [
+            {
+                "title": "異常狀態顯示",
+                "content": "整合全場設備狀態，異常即時標示，支援快速判斷與處理。"
+            },
+            {
+                "title": "溫度即時監控",
+                "content": "展示各區實際溫度與設定值，狀態持續時間一目了然。"
+            }
+        ]
+    },
+    {
+        "key": "tv2",
+        "logo": "assets/tv/control.svg",
+        "title": "格式二",
+        "image": "assets/tv/tv2.png",
+        "image_hd": "assets/tv/tv2.png",
+        "cards": [
+            {
+                "title": "即時溫度監控",
+                "content": "顯示各區實測溫度與設定值，方便比對判斷。"
+            },
+            {
+                "title": "狀態持續時間",
+                "content": "每筆數據皆顯示異常持續秒數，方便追蹤與檢查。"
+            }
+        ]
+    },
+    {
+        "key": "tv3",
+        "logo": "assets/tv/control.svg",
+        "title": "格式三",
+        "image": "assets/tv/tv3.png",
+        "image_hd": "assets/tv/tv3.png",
+        "cards": [
+            {
+                "title": "圖示提示異常",
+                "content": "以燈號與圖示標示設備狀態，異常一眼辨識。"
+            },
+            {
+                "title": "更新時間提示",
+                "content": "底部顯示狀態更新時間，確保資訊即時。"
+            }
+        ]
+    }
+]
