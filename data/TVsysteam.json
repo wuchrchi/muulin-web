@@ -1,14 +1,14 @@
 [
     {
         "key": "tv1",
-        "logo": "assets/tv/control.svg",
+        "logo": "../assets/tv/control.svg",
         "title": "範例一",
-        "image": "assets/tv/tv1.png",
-        "image_hd": "assets/tv/tv1.png",
+        "image": "../assets/tv/tv1.png",
+        "image_hd": "../assets/tv/tv1.png",
         "cards": [
             {
-                "title": "異常狀態顯示",
-                "content": "整合全場設備狀態，異常即時標示，支援快速判斷。"
+                "title": "純文字顯示",
+                "content": "適用於需多筆資料觀察，例如:庫門、警報、。"
             },
             {
                 "title": "溫度即時監控",
@@ -18,10 +18,10 @@
     },
     {
         "key": "tv2",
-        "logo": "assets/tv/control.svg",
+        "logo": "../assets/tv/control.svg",
         "title": "範例二",
-        "image": "assets/tv/tv2.png",
-        "image_hd": "assets/tv/tv2.png",
+        "image": "../assets/tv/tv2.png",
+        "image_hd": "../assets/tv/tv2.png",
         "cards": [
             {
                 "title": "即時溫度監控",
@@ -35,10 +35,10 @@
     },
     {
         "key": "tv3",
-        "logo": "assets/tv/control.svg",
+        "logo": "../assets/tv/control.svg",
         "title": "範例三",
-        "image": "assets/tv/tv3.png",
-        "image_hd": "assets/tv/tv3.png",
+        "image": "../assets/tv/tv3.png",
+        "image_hd": "../assets/tv/tv3.png",
         "cards": [
             {
                 "title": "圖示提示異常",
