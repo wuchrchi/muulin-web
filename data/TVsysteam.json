@@ -2,7 +2,7 @@
     {
         "key": "tv1",
         "logo": "assets/tv/control.svg",
-        "title": "格式一",
+        "title": "範例一",
         "image": "assets/tv/tv1.png",
         "image_hd": "assets/tv/tv1.png",
         "cards": [
@@ -19,7 +19,7 @@
     {
         "key": "tv2",
         "logo": "assets/tv/control.svg",
-        "title": "格式二",
+        "title": "範例二",
         "image": "assets/tv/tv2.png",
         "image_hd": "assets/tv/tv2.png",
         "cards": [
@@ -36,7 +36,7 @@
     {
         "key": "tv3",
         "logo": "assets/tv/control.svg",
-        "title": "格式三",
+        "title": "範例三",
         "image": "assets/tv/tv3.png",
         "image_hd": "assets/tv/tv3.png",
         "cards": [
