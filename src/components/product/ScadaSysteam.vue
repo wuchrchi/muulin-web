@@ -51,7 +51,7 @@
                 <!-- Preview Block -->
                 <div class="scada-preview">
                     <div class="scada-mock">
-                        <img src="././assets/pc.png" class="pc-frame" alt="SCADA Frame" />
+                        <img src="../../assets/pc.png" class="pc-frame" alt="SCADA Frame" />
                         <div class="screen-wrapper">
                             <img :src="activeData?.image" class="screen-content" :alt="activeData?.title"
                                 @click="openZoom" />
@@ -114,7 +114,7 @@ const closeZoom = () => {
 
 const getScadaData = async () => {
     try {
-        const scadaData = await axios.get('./data/scadaData.json')
+        const scadaData = await axios.get('../../../data/scadaData.json')
         scadaModules.value = scadaData.data
         activeKey.value = scadaModules.value[0]?.key || ''
         console.log('載入成功:', scadaModules.value)
@@ -130,24 +130,23 @@ onMounted(() => {
 
 // 功能支援項目
 const sharedSupports = [
-    { title: "即時資訊", icon: "./assets/scada/realtime.svg" },
-    { title: "遠端設定", icon: "./assets/scada/remote.svg" },
-    { title: "事件紀錄", icon: "./assets/scada/log.svg" },
-    { title: "圖表下載", icon: "./assets/scada/chart.svg" },
-    { title: "報表排程", icon: "./assets/scada/schedule.svg" },
-    { title: "智能控溫", icon: "./assets/scada/temp.svg" },
-    { title: "智能除濕", icon: "./assets/scada/dehumid.svg" },
-    { title: "抑電管理", icon: "./assets/scada/powermeter.svg" },
-    { title: "需量管理", icon: "./assets/scada/demand.svg" },
-    { title: "告警系統", icon: "./assets/scada/warn.svg" },
-    { title: "電力系統", icon: "./assets/scada/power.svg" }
+    { title: "即時資訊", icon: "../../assets/scada/realtime.svg" },
+    { title: "遠端設定", icon: "../../assets/scada/remote.svg" },
+    { title: "事件紀錄", icon: "../../assets/scada/log.svg" },
+    { title: "圖表下載", icon: "../../assets/scada/chart.svg" },
+    { title: "報表排程", icon: "../../assets/scada/schedule.svg" },
+    { title: "智能控溫", icon: "../../assets/scada/temp.svg" },
+    { title: "智能除濕", icon: "../../assets/scada/dehumid.svg" },
+    { title: "抑電管理", icon: "../../assets/scada/powermeter.svg" },
+    { title: "需量管理", icon: "../../assets/scada/demand.svg" },
+    { title: "告警系統", icon: "../../assets/scada/warn.svg" },
+    { title: "電力系統", icon: "../../assets/scada/power.svg" }
 ]
 </script>
 
 
 <style scoped>
-@import url(../css/m3color.css);
-@import url(../css/ScadaSysteam.css);
+@import url(../../css/product/ScadaSysteam.css);
 
 button.active {
     background-color: var(--md-sys-color-primary-container);

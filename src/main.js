@@ -21,9 +21,9 @@ import HomePage from "./components/HomePage.vue";
 import ProductService from "./components/ProductService.vue";
 import ResourceSection from "./components/ResourceSection.vue";
 import DownloadSection  from "./components/DownloadSection.vue";
-import SysteamPage  from "./components/SysteamPage.vue";
-import ScadaSysteam  from "./components/ScadaSysteam.vue";
-import TVSysteam  from "./components/TVSysteam.vue";
+import SysteamPage  from "./components/product/SysteamPage.vue";
+import ScadaSysteam  from "./components/product/ScadaSysteam.vue";
+import TVSysteam  from "./components/product/TVSysteam.vue";
 // 初始化
 import "./css/reset.css";
 import "./css/m3color.css";
@@ -42,9 +42,9 @@ const routes = [
   { path: "/ProductService", component: ProductService },
   { path: "/ResourceSection", component: ResourceSection },
   { path: "/DownloadSection", component: DownloadSection },
-  { path: "/SysteamPage", component: SysteamPage },
-  { path: "/ScadaSysteam", component: ScadaSysteam },
-  { path: "/TVSysteam", component: TVSysteam },
+  { path: "/product/SysteamPage", component: SysteamPage },
+  { path: "/product/ScadaSysteam", component: ScadaSysteam },
+  { path: "/product/TVSysteam", component: TVSysteam },
 ];
 
 const router = createRouter({

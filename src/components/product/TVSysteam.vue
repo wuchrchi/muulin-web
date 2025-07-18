@@ -53,7 +53,7 @@
                 <!-- Preview Block -->
                 <div class="tv-preview">
                     <div class="tv-mock">
-                        <img src="././assets/tv/TV.png" class="tv-frame" alt="SCADA Frame" />
+                        <img src="../../assets/tv/TV.png" class="tv-frame" alt="SCADA Frame" />
                         <div class="tvscreen-wrapper">
                             <img :src="activeData?.image" class="tvscreen-content" :alt="activeData?.title"
                                 @click="openZoom" />
@@ -116,7 +116,7 @@ const closeZoom = () => {
 
 const getScadaData = async () => {
     try {
-        const scadaData = await axios.get('./data/TVsysteam.json')
+        const scadaData = await axios.get('../../../data/TVsysteam.json')
         scadaModules.value = scadaData.data
         activeKey.value = scadaModules.value[0]?.key || ''
         console.log('載入成功:', scadaModules.value)
@@ -132,20 +132,18 @@ onMounted(() => {
 
 // 功能支援項目
 const sharedSupports = [
-    { title: "即時狀態資訊", icon: "./assets/scada/realtime.svg" },
-    { title: "警報聲音提示", icon: "./assets/scada/remote.svg" },
-    { title: "多頁面輪播", icon: "./assets/scada/log.svg" },
-    { title: "客製化LOGO", icon: "./assets/scada/chart.svg" },
-    { title: "雲端自動更新", icon: "./assets/scada/schedule.svg" },
-    { title: "本地端及時數據", icon: "./assets/scada/temp.svg" }
+    { title: "即時狀態資訊", icon: "../../assets/scada/realtime.svg" },
+    { title: "警報聲音提示", icon: "../../assets/scada/remote.svg" },
+    { title: "多頁面輪播", icon: "../../assets/scada/log.svg" },
+    { title: "客製化LOGO", icon: "../../assets/scada/chart.svg" },
+    { title: "雲端自動更新", icon: "../../assets/scada/schedule.svg" },
+    { title: "本地端及時數據", icon: "../../assets/scada/temp.svg" }
 ]
 </script>
 
 
 <style scoped>
-@import url(../css/m3color.css);
-@import url(../css/ScadaSysteam.css);
-@import url(../css/tv.css);
+@import url(../../css/product/tv.css);
 
 button.active {
     background-color: var(--md-sys-color-primary-container);
