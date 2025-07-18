@@ -13,15 +13,6 @@
                         <p>如工作站般，數據即時更新，即時監控數據。</p>
                     </div>
 
-                    <!-- 概覽卡片 -->
-                    <div class="info-section" v-if="activeData?.cards">
-                        <div class="scada-card" v-for="(card, index) in activeData.cards" :key="index"
-                            :data-aos="'fade-up'" :data-aos-delay="index * 200">
-                            <h3>{{ card.title }}</h3>
-                            <p>{{ card.content }}</p>
-                        </div>
-                    </div>
-
                     <!-- 模組選單 -->
                     <div class="fuctions">
                         <h3>功能選單</h3>
@@ -35,6 +26,17 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- 概覽卡片 -->
+                    <div class="info-section" v-if="activeData?.cards">
+                        <div class="scada-card" v-for="(card, index) in activeData.cards" :key="index"
+                            :data-aos="'fade-up'" :data-aos-delay="index * 200">
+                            <h3>{{ card.title }}</h3>
+                            <p>{{ card.content }}</p>
+                        </div>
+                    </div>
+
+
 
                     <!-- 桌機版功能支援 -->
                     <div class="support-features desktop-only" v-if="!isMobile">
