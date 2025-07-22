@@ -12,8 +12,8 @@
                     </div>
                     <div class="item-mock">
                         <div class="mock-3d-wrap">
-                            <img src="../../assets/item/627removepic.png" class="mock-base" alt="主體" />
-                            <img src="../../assets/item/627move.png" class="mock-overlay" alt="面板貼紙" />
+                            <img src="../assets/item/627removepic.png" class="mock-base" alt="主體" />
+                            <img src="../assets/item/627move.png" class="mock-overlay" alt="面板貼紙" />
                         </div>
                     </div>
 
@@ -101,12 +101,12 @@ onMounted(() => {
 })
 
 const sharedSupports = [
-    { title: '24小時數據查看', icon: '../../assets/scada/realtime.svg' },
-    { title: '警報聲音提示', icon: '../../assets/scada/remote.svg' },
-    { title: '多頁面輪播', icon: '../../assets/scada/log.svg' },
-    { title: '客製化LOGO', icon: '../../assets/scada/chart.svg' },
-    { title: '雲端自動更新', icon: '../../assets/scada/schedule.svg' },
-    { title: '本地端及時數據', icon: '../../assets/scada/temp.svg' }
+    { title: '24小時數據查看', icon: '../assets/scada/realtime.svg' },
+    { title: '警報聲音提示', icon: '../assets/scada/remote.svg' },
+    { title: '多頁面輪播', icon: '../assets/scada/log.svg' },
+    { title: '客製化LOGO', icon: '../assets/scada/chart.svg' },
+    { title: '雲端自動更新', icon: '../assets/scada/schedule.svg' },
+    { title: '本地端及時數據', icon: '../assets/scada/temp.svg' }
 ]
 </script>
 

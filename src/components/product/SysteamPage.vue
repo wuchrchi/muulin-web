@@ -46,8 +46,8 @@
                                     </div>
                                     <div class="phone" :class="isMobile ? 'fade-zoom' : ''" v-if="!isMobile.value"
                                         data-aos="fade-up" data-aos-delay="1400">
-                                        <img src="../../assets/phone.png" alt="phone"
-                                            :class="isMobile ? 'phoneFade' : ''" v-if="!isMobile.value || rightReady" />
+                                        <img src="../assets/phone.png" alt="phone" :class="isMobile ? 'phoneFade' : ''"
+                                            v-if="!isMobile.value || rightReady" />
                                     </div>
                                 </div>
                             </section>
@@ -70,7 +70,7 @@
                                         :data-aos="!isMobile.value ? 'fade-up' : null"
                                         :data-aos-delay="!isMobile.value ? '1400' : null">
 
-                                        <img src="../../assets/mac.png" alt="phone" :class="isMobile ? 'macFade' : ''"
+                                        <img src="../assets/mac.png" alt="phone" :class="isMobile ? 'macFade' : ''"
                                             v-if="!isMobile.value || rightReady" />
                                     </div>
                                 </div>
