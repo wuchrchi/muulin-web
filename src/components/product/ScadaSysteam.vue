@@ -133,15 +133,15 @@ onMounted(() => {
 const sharedSupports = [
     { title: "即時資訊", icon: "../assets/scada/realtime.svg" },
     { title: "遠端設定", icon: "../assets/scada/remote.svg" },
-    { title: "事件紀錄", icon: "/assets/scada/log.svg" },
-    { title: "圖表下載", icon: "/assets/scada/chart.svg" },
-    { title: "報表排程", icon: "/assets/scada/schedule.svg" },
-    { title: "智能控溫", icon: "/assets/scada/temp.svg" },
-    { title: "智能除濕", icon: "/assets/scada/dehumid.svg" },
-    { title: "抑電管理", icon: "/assets/scada/powermeter.svg" },
-    { title: "需量管理", icon: "/assets/scada/demand.svg" },
-    { title: "告警系統", icon: "/assets/scada/warn.svg" },
-    { title: "電力系統", icon: "/assets/scada/power.svg" }
+    { title: "事件紀錄", icon: "../assets/scada/log.svg" },
+    { title: "圖表下載", icon: "../assets/scada/chart.svg" },
+    { title: "報表排程", icon: "../assets/scada/schedule.svg" },
+    { title: "智能控溫", icon: "../assets/scada/temp.svg" },
+    { title: "智能除濕", icon: "../assets/scada/dehumid.svg" },
+    { title: "抑電管理", icon: "../assets/scada/powermeter.svg" },
+    { title: "需量管理", icon: "../assets/scada/demand.svg" },
+    { title: "告警系統", icon: "../assets/scada/warn.svg" },
+    { title: "電力系統", icon: "../assets/scada/power.svg" }
 ]
 </script>
 
