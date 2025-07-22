@@ -116,7 +116,7 @@ const closeZoom = () => {
 
 const getScadaData = async () => {
     try {
-        const scadaData = await axios.get(process.env.BASE_URL + 'data/scadaData.json')
+        const scadaData = await axios.get(process.env.BASE_URL + 'data/TVsysteam.json')
         scadaModules.value = scadaData.data
         activeKey.value = scadaModules.value[0]?.key || ''
         console.log('載入成功:', scadaModules.value)
