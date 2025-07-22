@@ -114,7 +114,7 @@ const closeZoom = () => {
 
 const getScadaData = async () => {
     try {
-        const scadaData = await axios.get('/data/scadaData.json')
+        const scadaData = await axios.get(process.env.BASE_URL + 'data/scadaData.json')
         scadaModules.value = scadaData.data
         activeKey.value = scadaModules.value[0]?.key || ''
         console.log('載入成功:', scadaModules.value)
@@ -130,8 +130,8 @@ onMounted(() => {
 
 // 功能支援項目
 const sharedSupports = [
-    { title: "即時資訊", icon: "/assets/scada/realtime.svg" },
-    { title: "遠端設定", icon: "/assets/scada/remote.svg" },
+    { title: "即時資訊", icon: "../assets/scada/realtime.svg" },
+    { title: "遠端設定", icon: "../assets/scada/remote.svg" },
     { title: "事件紀錄", icon: "/assets/scada/log.svg" },
     { title: "圖表下載", icon: "/assets/scada/chart.svg" },
     { title: "報表排程", icon: "/assets/scada/schedule.svg" },
