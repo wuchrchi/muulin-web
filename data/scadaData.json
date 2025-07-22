@@ -1,10 +1,10 @@
 [
     {
         "key": "device",
-        "logo": "../../assets/scada/box.svg",
+        "logo": "../assets/scada/box.svg",
         "title": "設備資訊",
-        "image": "../../assets/scada/scada.png",
-        "image_hd": "../../assets/scada/scada_hd.png",
+        "image": "../assets/scada/scada.png",
+        "image_hd": "../assets/scada/scada_hd.png",
         "cards": [
             {
                 "title": "設備連線狀況",
