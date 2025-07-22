@@ -114,7 +114,7 @@ const closeZoom = () => {
 
 const getScadaData = async () => {
     try {
-        const scadaData = await axios.get('/public/data/scadaData.json')
+        const scadaData = await axios.get('/data/scadaData.json')
         scadaModules.value = scadaData.data
         activeKey.value = scadaModules.value[0]?.key || ''
         console.log('載入成功:', scadaModules.value)
