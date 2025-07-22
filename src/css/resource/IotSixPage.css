@@ -1,0 +1,154 @@
+.item-container {
+    padding-top: 40px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in;
+    background: radial-gradient(circle at top left, #dff5ec, #e9f2ea, #e5ebe3);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.item-layout {
+    width: 100%;
+    display: flex;
+    gap: 1vw;
+    padding: 0 4vw;
+    /* flex-wrap: wrap; */
+}
+
+.item-infomation,
+.item-preview {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.item-infomation {
+    padding-top: 1%;
+    width: 50%;
+}
+
+.item-preview {
+    width: 40%;
+}
+
+.item-mock {
+    display: flex;
+    /* position: relative; */
+    max-width: 100%;
+    height: 60%;
+}
+
+.mock-3d-wrap {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    perspective: 1000px;
+    /* 給 3D 效果基礎 */
+}
+
+.mock-base {
+    display: absolute;
+    width: 100%;
+    z-index: 1;
+    filter: drop-shadow(12px 12px 24px rgba(0, 0, 0, 1));
+}
+
+
+
+.mock-overlay {
+    position: absolute;
+    top: -4%;
+    left: -2%;
+    width: 100%;
+    transform: translateZ(30px);
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.3));
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.item-mock-sec {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    /* position: relative; */
+    /* max-width: 100%; */
+    height: 20%;
+}
+
+.mock-sec {
+    /* display: absolute; */
+    width: 80%;
+    z-index: 1;
+    filter: drop-shadow(12px 12px 24px rgba(0, 0, 0, 1));
+}
+
+.itemfuctionGrid {
+    background: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.spec-table thead {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.spec-table th {
+    padding: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.spec-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    font-size: 0.95rem;
+}
+
+.spec-table .title {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--md-sys-color-primary);
+}
+
+.spec-table .value {
+    color: var(--md-sys-color-on-surface);
+}
+
+.tvsupport-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .item-layout {
+        flex-direction: column;
+    }
+
+    .item-infomation,
+    .item-preview {
+        flex: 1 1 100%;
+    }
+}

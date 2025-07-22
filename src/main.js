@@ -24,6 +24,7 @@ import DownloadSection  from "./components/DownloadSection.vue";
 import SysteamPage  from "./components/product/SysteamPage.vue";
 import ScadaSysteam  from "./components/product/ScadaSysteam.vue";
 import TVSysteam  from "./components/product/TVSysteam.vue";
+import IotSixPage  from "./components/resource/IotSixPage.vue";
 // 初始化
 import "./css/reset.css";
 import "./css/m3color.css";
@@ -45,6 +46,7 @@ const routes = [
   { path: "/product/SysteamPage", component: SysteamPage },
   { path: "/product/ScadaSysteam", component: ScadaSysteam },
   { path: "/product/TVSysteam", component: TVSysteam },
+    { path: "/resource/IotSixPage", component: IotSixPage },
 ];
 
 const router = createRouter({

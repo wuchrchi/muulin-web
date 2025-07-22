@@ -91,7 +91,7 @@
 }
 
 .intro-block {
-    padding: 20px;
+    padding: 16px;
     border-radius: 16px;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .intro-block p {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     opacity: 0.8;
 }
 

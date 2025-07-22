@@ -31,8 +31,9 @@
                                         <span>{{ item }}</span>
                                     </div>
                                 </div>
-                                <button class="cta-button">深入了解
-                                </button>
+                                <router-link to="/resource/IotSixPage" route.path='/ScadaSysteam' class="cta-button">
+                                    深入了解
+                                </router-link>
                             </div>
                         </div>
                     </section>
