@@ -1,6 +1,6 @@
 [
   {
-    "title": "IoT 627 雲 端 數 位 控 制 器 組 ",
+    "title": "IoT 627 雲 端 數 位 控 制 器 組",
     "subtitle": "深入了解我們的核心技術與解決方案架構",
     "icon": "assets/627.avif",
     "items": [
@@ -8,7 +8,8 @@
       "處理器 : 32位元高速運算微處理器",
       "通訊方式 : 2.4G WiFi",
       ""
-    ]
+    ],
+    "path": "/resource/IotSixPage"
   },
   {
     "title": "IoT 512 協 議 轉 換 器",
@@ -19,7 +20,8 @@
       "處理器 : 32位元高速運算微處理器",
       "通訊方式 : WAN Ports x 1 /2.4G WiFi",
       ""
-    ]
+    ],
+    "path": "/resource/IotfivePage"
   },
   {
     "title": "IoT 127 雲 端 變 頻 冷 凍 冷 藏 機",
@@ -30,7 +32,8 @@
       "",
       "",
       ""
-    ]
+    ],
+    "path": "/resource/IotfivePage"
   },
   {
     "title": "IoT 909 雲 端 發 報 器",
@@ -41,7 +44,8 @@
       "",
       "",
       ""
-    ]
+    ],
+    "path": "/resource/IotfivePage"
   },
   {
     "title": "ECU 60 電 膨 驅 動 器",
@@ -52,6 +56,7 @@
       "",
       "",
       ""
-    ]
+    ],
+    "path": "/resource/IotfivePagedsd"
   }
 ]
