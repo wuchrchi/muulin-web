@@ -3,16 +3,13 @@
         "key": "item1",
         "samples": [
             {
-                "base": "../assets/item/627removepic.png",
-                "overlay": "../assets/item/627move.png"
+                "base": "../assets/item/627removepic.png"
             },
             {
-                "base": "../assets/item/627top.png",
-                "overlay": "../assets/item/627topmove.png"
+                "base": "../assets/item/627top.png"
             },
             {
-                "base": "../assets/item/627control.png",
-                "overlay": "../assets/item/627mointer.png"
+                "base": "../assets/item/627control.png"
             }
         ]
     }
