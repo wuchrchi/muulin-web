@@ -3,7 +3,7 @@
         "key": "item1",
         "samples": [
             {
-                "base": "../assets/item/627removepic.png"
+                "base": "../assets/item/627.png"
             },
             {
                 "base": "../assets/item/627top.png"
