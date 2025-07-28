@@ -15,7 +15,7 @@
                         <div class="mock-3d-wrap" :key="currentSample()?.base" @mouseenter="stopCarousel"
                             @mouseleave="startCarousel">
                             <img :src="currentSample()?.base" class="mock-base" alt="主體" />
-                            <img :src="currentSample()?.overlay" class="mock-overlay" alt="面板貼紙" />
+                            <!-- <img :src="currentSample()?.overlay" class="mock-overlay" alt="面板貼紙" /> -->
                         </div>
                     </transition>
                 </div>
