@@ -11,24 +11,21 @@
                     <p class="">IoT 627是一台具無線傳輸與國際標準通訊協議的,雲端數位控制器，應用於監視及控制冷凍相關系統。</p>
                 </div>
                 <div class="item-mock">
-                    <div class="mock-3d-wrap">
-                        <img src="../assets/item/627removepic.png" class="mock-base" alt="主體" />
-                        <img src="../assets/item/627move.png" class="mock-overlay" alt="面板貼紙" />
-                    </div>
+                    <transition name="fade" mode="out-in">
+                        <div class="mock-3d-wrap" :key="currentSample()?.base" @mouseenter="stopCarousel"
+                            @mouseleave="startCarousel">
+                            <img :src="currentSample()?.base" class="mock-base" alt="主體" />
+                            <img :src="currentSample()?.overlay" class="mock-overlay" alt="面板貼紙" />
+                        </div>
+                    </transition>
                 </div>
-
             </div>
 
             <!-- Right: Preview Block -->
             <div class="item-preview">
 
 
-                <!-- 概覽卡片 -->
-                <!-- <div class="item-mock-sec">
-                        <div class="mock-3d-wrap">
-                            <img src="../../assets/item/627control.png" class="mock-sec" alt="主體" />
-                        </div>
-                    </div> -->
+
                 <div class="item-fuctions">
                     <div class="itemfuctionGrid">
                         <table class="spec-table">
@@ -78,27 +75,62 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import axios from 'axios'
 
-const scadaModules = ref([])
+const itemModules = ref([])
 const activeKey = ref('')
+const activeSampleIndex = ref(0)
+const intervalId = ref(null)
 
-const getScadaData = async () => {
+const getitemData = async () => {
     try {
-        const scadaData = await axios.get('../../../data/TVsysteam.json')
-        scadaModules.value = scadaData.data
-        activeKey.value = scadaModules.value[0]?.key || ''
-        console.log('載入成功:', scadaModules.value)
+        const itemData = await axios.get(process.env.BASE_URL + 'data/IotSixPage.json')
+        itemModules.value = itemData.data
+        activeKey.value = itemModules.value[0]?.key || ''
+        console.log('載入成功:', itemModules.value)
     } catch (err) {
         console.error('載入 JSON 失敗:', err)
     }
 }
 
+const currentItem = () =>
+    itemModules.value.find(item => item.key === activeKey.value)
+
+const currentSample = () => {
+    const item = currentItem()
+    if (!item || !item.samples.length) return null
+    return item.samples[activeSampleIndex.value % item.samples.length]
+}
+
+// 輪播功能
+const startCarousel = () => {
+    stopCarousel()
+    intervalId.value = setInterval(() => {
+        const item = currentItem()
+        if (item && item.samples.length > 1) {
+            activeSampleIndex.value = (activeSampleIndex.value + 1) % item.samples.length
+        }
+    }, 3000) // 每3秒切換
+}
+
+const stopCarousel = () => {
+    if (intervalId.value) clearInterval(intervalId.value)
+}
+
+// 換商品時，樣本歸零
+watch(activeKey, () => {
+    activeSampleIndex.value = 0
+    startCarousel()
+})
+
 onMounted(() => {
-    getScadaData()
+    getitemData().then(() => {
+        startCarousel()
+    })
     window.scrollTo(0, 0)
 })
+
 
 const sharedSupports = [
     { title: '24小時數據查看', icon: '../assets/scada/realtime.svg' },
