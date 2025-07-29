@@ -46,7 +46,7 @@
             </router-link>
           </div>
           <router-link to="/SysteamPage" class="system-login-button"
-            :class="{ 'nav-active': route.path === '/SysteamPage' }">
+            :class="{ 'nav-active': route.path === '/product/SysteamPage' }">
             <span class="button-content">系統介紹</span>
             <div class="button-glow"></div>
           </router-link>
