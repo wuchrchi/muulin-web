@@ -19,8 +19,8 @@
         </router-link>
       </div>
       <div class="nav-links" v-if="!isMobile">
-        <router-link to="/SysteamPage" class="system-login-button"
-          :class="{ 'nav-active': route.path === '/SysteamPage' }">
+        <router-link to='/product/SysteamPage' class="system-login-button"
+          :class="{ 'nav-active': route.path === '/product/SysteamPage' }">
           <span class="button-content">系統介紹</span>
           <div class="button-glow"></div>
         </router-link>
@@ -45,7 +45,7 @@
               <div class="nav-underline"></div>
             </router-link>
           </div>
-          <router-link to="/SysteamPage" class="system-login-button"
+          <router-link to='/product/SysteamPage' class=" system-login-button"
             :class="{ 'nav-active': route.path === '/product/SysteamPage' }">
             <span class="button-content">系統介紹</span>
             <div class="button-glow"></div>
