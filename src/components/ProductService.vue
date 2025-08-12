@@ -12,7 +12,7 @@
           </div>
           <div ref="scrollArea" class="serviceCard" @scroll="handleScroll">
             <!-- 三張卡片結構保持原樣 -->
-            <div class="serviceCards">
+            <!-- <div class="serviceCards">
               <div class="card">
                 <div class="pic">
                   <img src="./assets/operator.png" alt="operator" class="operatorimg" />
@@ -36,7 +36,7 @@
               <router-link to="/product/SysteamPage" route.path='/SysteamShowPage' class="serviceButton">
                 深入了解
               </router-link>
-            </div>
+            </div> -->
 
             <div class="serviceCards mobile">
               <div class="pic">
