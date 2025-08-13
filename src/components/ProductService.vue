@@ -57,7 +57,7 @@
                   </div>
                 </div>
               </div>
-              <router-link to="/product/ScadaSysteam" route.path='/ScadaSysteam' class="serviceButton">
+              <router-link to="/ProductService/ScadaSysteam" route.path='/ScadaSysteam' class="serviceButton">
                 深入了解
               </router-link>
             </div>
@@ -83,7 +83,7 @@
                   </div>
                 </div>
               </div>
-              <router-link to="/product/TVSysteam" route.path='/TVSysteam' class="serviceButton">
+              <router-link to="/ProductService/TVSysteam" route.path='/TVSysteam' class="serviceButton">
                 深入了解
               </router-link>
             </div>

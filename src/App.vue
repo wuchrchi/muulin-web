@@ -21,7 +21,7 @@ export default {
     const navbarKey = ref(Date.now());
     const route = useRoute();
 
-    const hiddenLayoutRoutes = ["/", "/product/SysteamPage", "/product/ScadaSysteam", "/product/TVSysteam", "/resource/IotSixPage"];
+    const hiddenLayoutRoutes = ["/", "/ProductService/SysteamPage", "/ProductService/ScadaSysteam", "/ProductService/TVSysteam", "/ResourceSection/IotSixPage"];
     const hideLayout = computed(() => hiddenLayoutRoutes.includes(route.path));
 
     onMounted(() => {

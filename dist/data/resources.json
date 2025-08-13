@@ -9,7 +9,7 @@
       "通訊方式 : 2.4G WiFi",
       ""
     ],
-    "path": "/resource/IotSixPage"
+    "path": "/ResourceSection/IotSixPage"
   },
   {
     "title": "IoT 512 協 議 轉 換 器",
@@ -21,7 +21,7 @@
       "通訊方式 : WAN Ports x 1 /2.4G WiFi",
       ""
     ],
-    "path": "/resource/IotfivePage"
+    "path": "/ResourceSection/IotfivePage"
   },
   {
     "title": "IoT 127 雲 端 變 頻 冷 凍 冷 藏 機",
@@ -33,7 +33,7 @@
       "",
       ""
     ],
-    "path": "/resource/IotfivePage"
+    "path": "/ResourceSection/IotfivePage"
   },
   {
     "title": "IoT 909 雲 端 發 報 器",
@@ -45,7 +45,7 @@
       "",
       ""
     ],
-    "path": "/resource/IotfivePage"
+    "path": "/ResourceSection/IotfivePage"
   },
   {
     "title": "ECU 60 電 膨 驅 動 器",
@@ -57,6 +57,6 @@
       "",
       ""
     ],
-    "path": "/resource/IotfivePagedsd"
+    "path": "/ResourceSection/IotfivePagedsd"
   }
 ]

@@ -21,10 +21,10 @@ import HomePage from "./components/HomePage.vue";
 import ProductService from "./components/ProductService.vue";
 import ResourceSection from "./components/ResourceSection.vue";
 import DownloadSection from "./components/DownloadSection.vue";
-import SysteamPage from "./components/product/SysteamPage.vue";
-import ScadaSysteam from "./components/product/ScadaSysteam.vue";
-import TVSysteam from "./components/product/TVSysteam.vue";
-import IotSixPage from "./components/resource/IotSixPage.vue";
+import SysteamPage from "./components/ProductService/SysteamPage.vue";
+import ScadaSysteam from "./components/ProductService/ScadaSysteam.vue";
+import TVSysteam from "./components/ProductService/TVSysteam.vue";
+import IotSixPage from "./components/ResourceSection/IotSixPage.vue";
 // 初始化
 import "./css/reset.css";
 import "./css/m3color.css";
@@ -43,20 +43,16 @@ const routes = [
   { path: "/ProductService", component: ProductService },
   { path: "/ResourceSection", component: ResourceSection },
   { path: "/DownloadSection", component: DownloadSection },
-  { path: "/product/SysteamPage", component: SysteamPage },
-  { path: "/product/ScadaSysteam", component: ScadaSysteam },
-  { path: "/product/TVSysteam", component: TVSysteam },
-  { path: "/resource/IotSixPage", component: IotSixPage },
+  { path: "/ProductService/SysteamPage", component: SysteamPage },
+  { path: "/ProductService/ScadaSysteam", component: ScadaSysteam },
+  { path: "/ProductService/TVSysteam", component: TVSysteam },
+  { path: "/ResourceSection/IotSixPage", component: IotSixPage },
 ];
 
 const router = createRouter({
-  history: createWebHistory("/muulin-web/"),
+  history: createWebHistory("/"),
   routes,
 });
-// const router = createRouter({
-//   history: createWebHistory("/"),
-//   routes,
-// });
 
 loadFonts();
 
